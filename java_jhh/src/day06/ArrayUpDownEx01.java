@@ -54,7 +54,7 @@ public class ArrayUpDownEx01 {
 				num = scan.nextInt();
 				if(num == r) {
 					System.out.println(i+1 + "번째 게임 " + count + "번 만에 정답입니다.");
-					
+					record[i]=count;
 				}
 				else if(num > r) {
 					System.out.println("DOWN");		
