@@ -5,7 +5,8 @@ public class ArrayRandomEx02 {
 	public static void main(String[] args) {
 		/* 랜덤으로 1~9사이의 숫자르 중복되지 않게 3개 생성하여 배열 저장하는 코드를 작성하세요.		 * 
 		 * */
-		
+
+	
 		int size = 3;
 		int arr[] = new int[size];//랜덤 수를 저장할 배열
 		int count = 0;//저장된 랜덤 수의 개수
