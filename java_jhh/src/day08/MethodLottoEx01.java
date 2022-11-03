@@ -71,8 +71,6 @@ public class MethodLottoEx01 {
 		case 5:		System.out.println("5등!"); break;
 		case -1:		System.out.println("꽝!"); break;
 		}
-
-		
 	}
 	
 	/*switch (countLotto(arr1 [], arr2)) {
