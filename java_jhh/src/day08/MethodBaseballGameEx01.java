@@ -2,7 +2,7 @@ package day08;
 
 import java.util.Scanner;
 
-public class MethoddBaseballGameEx01 {
+public class MethodBaseballGameEx01 {
 
 	public static void main(String[] args) {
 		/* 1~9사이의 중복되지 않은 3개의 숫자가 랜덤으로 생성이 되고, 

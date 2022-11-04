@@ -2,7 +2,9 @@ package day09;
 
 import java.util.Scanner;
 
-public class BaseballManager {
+import day10.BaseballGame;
+
+public class BaseballManagerSelf {
 
 	public static void main(String[] args) {
 		/* 숫자 야구게임을 플레이 한 후, 기록을 저장하는 프로그램을 작성하세요.
@@ -17,8 +19,113 @@ public class BaseballManager {
 		 * 4. 춘향이 4회
 		 * */
 		
+
 		
 		int menu;
+		int min = 1, max = 9, size = 3;
+		int count = 0;
+		//메뉴 출력
+		do {printMenu();
+			//메뉴 선택
+			menu = selectMenu();
+			//선택한 메뉴에 따른 기능 실행
+			switch (menu) {
+			
+			case 1 : playGame();
+					int []com = createRandomArray(1, 9, 3);
+					BaseballGame bg = new BaseballGame(com);
+					do {
+						
+						
+						
+						
+						
+					}while(true);
+			case 2 : printRecord();
+			case 3 : System.out.println("프로그램을 종료합니다.!!");
+			break;
+			}
+			return;
+		}while(menu != 3);
+		
+		
+		
+	
+	}
+	
+
+	/**
+	 * 주어진 메뉴에 맞는 기능을 실행하는 메소드
+	 * @param menu 실행할 메뉴 번호
+	 */
+	
+	private static void runMenum(int menu) {
+		//1.플레이
+		//2.기록확인
+		//3.종료
+		
+		switch(menu) {
+		case 1 : 
+			//컴퓨터가 랜덤으로 숫자 생성
+			
+			//사용자가 숫자 입력
+			
+			//판별
+			
+			//3S종료
+			break;
+		case 2 :
+			break;
+		case 3 :
+			break;
+		default;
+
+		}
+	}
+	/**
+	 * 메뉴를 콘솔에서 입력받아 돌려주는 메소드
+	 * @return 입력받은 메소드
+	 * 
+	 * */
+	private static int selectMenu() {
+		Scanner scan = new Scanner(System.in);
+		return scan.nextInt();
+	}
+	
+	
+	
+	/**
+	 * 메뉴를 출력하는 메소드로, 마지막 메뉴는 엔터를 안침
+	 * @param strs 콘솔에 출력할 메뉴들
+	 */
+	private static void printMenu(String ...strs) {
+		
+		for(int i = 0; i<strs.length; i++) {
+			/*
+			System.out.println(strs[i]);
+			if(i != strs.length-1) {
+				System.out.println();
+			}*/
+			System.out.println(strs[i] + (i!= strs.length-1?"\n":""));
+		}
+		
+		
+	}
+	
+	
+}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*int menu;
 		int min = 1, max = 9, size = 3;
 		int count = 0;
 		//메뉴 출력
@@ -83,13 +190,14 @@ public class BaseballManager {
 		
 	}
 	
-	
+	*/
 	/**
 	메뉴
 	 * 1. 플레이
 	 * 2. 기록확인
 	 * 3. 종료
 	*/
+	/*	
 	public static void printMenu() {
 		System.out.println("------메뉴-----");
 		System.out.println("1. 플레이");
@@ -97,13 +205,15 @@ public class BaseballManager {
 		System.out.println("3. 프로그램 종료");
 		System.out.print("메뉴를 선택하세요 : ");
 	}
+	*/
 	
 	 /** 메뉴선택 : 2*/
+		/*
 	public static int selectMenu() {
 		Scanner scan = new Scanner(System.in);
 		return scan.nextInt();
 	}
-	
+	*/
 
 	
 	/**
@@ -113,6 +223,7 @@ public class BaseballManager {
 	 * 
 	 * 
 	 * */
+	/*
 	public static void printGame(int strike, int ball) {
 		if(strike != 0) {
 			System.out.print(strike+"S ");
@@ -125,7 +236,7 @@ public class BaseballManager {
 		}	
 		System.out.println();
 	}
-	
+	*/
 	
 	/**
 	 * 기능 : 두 배열이 주어지면 같은 번지에 있는 수를 비교하여 일치하는 숫자들이 몇개 있는지 스트라이크
@@ -134,7 +245,8 @@ public class BaseballManager {
 	 * @param arr2 int[] : 두번째 정수 배열
 	 * @return 같은 번지에서 일치하는 숫자들의 개수
 	 */
-	public static int getStrike(int []arr1, int arr2[]) {
+	/*
+		public static int getStrike(int []arr1, int arr2[]) {
 		if(arr1 == null || arr2== null) {
 			return 0;
 		}
@@ -147,7 +259,7 @@ public class BaseballManager {
 		}
 		return strike;
 	}
-	
+	*/
 	/**
 	 * 기능 : 두  배열이 주어지면 같은 번지에 있는 수를 비교하여 일치하는 숫자들이 몇개 있는지 스트라이크
 	 * 알려주는 메소드
@@ -155,6 +267,7 @@ public class BaseballManager {
 	 * @param arr2 int[] : 두번째 정수 배열
 	 * @return 같은 숫자들 중에서 번지가 서로 다른 숫자들의 개수
 	 * */
+		/*
 	public static int getBall(int []arr1, int []arr2) {
 		if(arr1 == null || arr2== null) {
 			return 0;
@@ -169,7 +282,7 @@ public class BaseballManager {
 		
 		return ball-strike;
 	}
-	
+	*/
 	
 	/** 기능 : Scanner가 주어지면 정수를 size개 만큼 입력받아 배열에 저장하고,
 	 * 		저장된 배열을 돌려주는 메소드
@@ -181,6 +294,8 @@ public class BaseballManager {
 	 * @return 입력받은 값들이 저장된 배열
 	 * 
 	 * */
+		/*
+		
 	public static int [] scanArray(Scanner scan, int size) {
 			if(size <= 0) {
 				return null;
@@ -191,7 +306,7 @@ public class BaseballManager {
 			}
 			return arr;
 	}
-	
+	*/
 	//메소드1
 	//기능: user에게 입력받는 method
 	/*public static int [] getUser(int size){
@@ -205,7 +320,7 @@ public class BaseballManager {
 		return arr;
 	}
 	*/
-	
+	/*
 	public static void printArray(int arr[]) {
 		if(arr == null) {
 			return;
@@ -216,7 +331,8 @@ public class BaseballManager {
 		System.out.println();
 	}
 	
-	
+	*/
+	/*
 	public static int count(int []arr1, int [] arr2) {
 		if(arr1 == null ||  arr2==null) {
 			return 0;
@@ -230,9 +346,9 @@ public class BaseballManager {
 		return count;
 	}
 	
-	
+	*/
 		
-	
+	/*
 	//메소드2
 	//기능 : 숫자가 같은 자리에 있는 S개수 
 	public static int countStrike(int []arr1, int [] arr2, int size) {
@@ -246,7 +362,8 @@ public class BaseballManager {
 		return countStrike;
 	}
 	
-	
+	*/
+		/*
 	public static int countBall(int [] arr1, int []getUser, int size) {
 		int countBall = 0;
 		int arr[]  = new int [size];
@@ -258,7 +375,7 @@ public class BaseballManager {
 		}	
 		return countBall;
 	}
-
+*/
 	//판별  
 		/*public static int getCount(int countStrike, int countBall, int []user) {
 			
@@ -267,7 +384,7 @@ public class BaseballManager {
 		}*/	
 	
 	
-	
+	/*
 	//메소드7
 	//기능 : 
 	public static int [] createRandomArray(int min, int max, int size) {
@@ -307,4 +424,4 @@ public class BaseballManager {
 	}
 	
 	
-}
+}*/
