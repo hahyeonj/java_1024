@@ -2,7 +2,7 @@ package day09;
 
 import java.util.Scanner;
 
-public class StudentManager {
+public class StudentManager implements ProgramManager {
 
 	public static void main(String[] args) {
 		/* 메뉴
@@ -107,7 +107,7 @@ public class StudentManager {
 		default:
 			System.out.println("잘못된 메뉴입니다.");
 		}
-		return count;
+		return;
 	
 		
 	}
