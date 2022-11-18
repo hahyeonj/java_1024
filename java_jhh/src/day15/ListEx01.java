@@ -112,7 +112,7 @@ public class ListEx01 {
 			System.out.println("삭제할 번호 입력");
 			int index = scan.nextInt() - 1;
 			if(index < 0 || index >= todoList.size()) {
-				throw new Exception("예외 발생 : 삭제할 번호를 잘못 입력했습니다.")
+				throw new Exception("예외 발생 : 삭제할 번호를 잘못 입력했습니다.");
 			}
 			
 			//입력한 번호에 맞는 할일을 삭제
