@@ -1,7 +1,7 @@
 package day22_1;
 
-import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class AttendanceMain {
@@ -13,12 +13,15 @@ public class AttendanceMain {
 		int menu = -1;
 		Attendance attendance = new Attendance();
 		do {
-			printMenu();
-			menu = scan.nextInt();
-			scan.nextLine();
-			System.out.println("=========================");
-			runMenu(menu, attendance);
-			
+			try {
+				printMenu();
+				menu = scan.nextInt();
+				scan.nextLine();
+				System.out.println("=========================");
+				runMenu(menu, attendance);
+			}catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
 		}while(menu != 3);
 		
 		
@@ -64,7 +67,6 @@ public class AttendanceMain {
 		System.out.println("3. 종료");
 		System.out.println("=============메뉴==============");
 		System.out.print("메뉴 선택 : ");
-		pirntBar();
 	}
 	
 	private static void printSubMenu(int menu) {
@@ -75,7 +77,7 @@ public class AttendanceMain {
 			pirntStr("2. 학생 수정");
 			pirntStr("3. 학생 삭제");
 			pirntBar();
-			pirntStr("메뉴 선택 : ");
+			System.out.println("메뉴 선택 : ");
 			break;
 		case 2:
 			pirntStr("========출석 관리 메뉴========");
@@ -86,7 +88,7 @@ public class AttendanceMain {
 			pirntStr("5. 출석 삭제");
 			pirntStr("6. 취소");
 			pirntBar();
-			pirntStr("메뉴 선택 : ");
+			System.out.println("메뉴 선택 : ");
 			break;
 		default:
 			pirntStr("잘못된 메뉴입니다.");
@@ -103,7 +105,7 @@ public class AttendanceMain {
 			managementStudents(stds);
 			break;
 		case 2:
-			//managementLogs(logs, stds);
+			managementLogs(logs, stds);
 			//학생정보가 변하기 때문에!
 			break;
 		case 3:
@@ -133,9 +135,7 @@ public class AttendanceMain {
 		
 		
 	}
-
-	
-	
+		
 	private static void addStudent(ArrayList<Student> stds) {
 		if(stds == null)
 			throw new RuntimeException("예외 발생 : 학생 정보를 관리하는 리스트가 없습니다.");
@@ -197,15 +197,195 @@ public class AttendanceMain {
 		pirntStr("학생 정보를 삭제했습니다.");
 		
 	}
+
+	private static void managementLogs(ArrayList<Log> logs, ArrayList<Student> stds) {
+		printSubMenu(2);
+		int subMenu = scan.nextInt();
+		scan.nextLine();
+		pirntBar();
+		switch(subMenu) {
+		case 1:	
+			checkLog(logs, stds);
+			sortLogs(logs);//일지 정렬
+			break;
+		case 2:	
+			printLogsByStudent(logs);
+			break;
+		case 3:	
+			printLogsByDate(logs);	
+			break;
+		case 4:	
+			updateLogs(logs);
+			break;
+		case 5:		
+			deleteLogs(logs);
+			break;
+		case 6:	pirntStr("취소합니다.");	break;	
+		default:pirntStr("잘못된 메뉴입니다.");
+		}
+	}
+	
+	private static void checkLog(ArrayList<Log> logs, ArrayList<Student> stds) {
+
+		// 날짜 입력
+		pirntStr("출석 일자(예:2022.11.23) : ");
+		String date = scan.nextLine();
+		//이미 입력된 날짜인지 확인
+		if(checkLogDate(logs, date)) {
+			pirntStr("이미 출석 체크한 일자입니다.");
+			return;
+		}
+		//출석 상태 정보 출력(결석 : X, 출석 : O, 지각 : /, 조퇴 : \)
+		pirntStr("결석 : X, 출석 : O, 지각 : /, 조퇴 : \\");
+		
+		//StudentLog를 리스트로 생성
+		ArrayList<StudentLog> stdLogs = new ArrayList<StudentLog>();
+		
+		//홍길동(20.05.05) : O
+
+		// 반복
+		for(Student std : stds) {
+			//StudentLog를 생성
+			//학생 이름과 생일 출력
+			System.out.println(std.getName() + "(" + std.getBirthday() + ") : " );
+			//출석 상태 입력
+			String state = scan.nextLine();
+			//StudentLog를 생성
+			StudentLog stdLog = new StudentLog(std, state);
+			//StudentLog 리스트에 추가 
+			stdLogs.add(stdLog);
+		}
+		//StudentLog 리스트와 날짜를 이용하여 Log 객체를 생성
+		Log log = new Log(stdLogs, date);
+		//Log 리스트에 생성된 Log 객체를 추가
+		logs.add(log);
+		
+	}
+
+	private static boolean checkLogDate(ArrayList<Log> logs, String date) {
+		if(logs == null || date == null)
+			throw new RuntimeException("일지 리스트가 없거나 날짜가 없습니다.");
+		if(logs.size() == 0)
+			return false;
+		for(Log log : logs) {
+			if(log.getDate().equals(date))
+				return true;
+		}
+		return false;
+	}
+
+	private static void sortLogs(ArrayList<Log> logs) {
+		if(logs ==null || logs.size() == 0)
+			return;
+		Collections.sort(logs, (o1, o2)->o1.getDate().compareTo(o2.getDate()));
+	}
+	
+	private static void printLogsByStudent(ArrayList<Log> logs) {
+		if(logs == null || logs.size() == 0) {
+			pirntStr("등록도니 출석체크가 없습니다.");
+			return;
+		}
+		//이름을 입력
+		System.out.print("이름 : ");
+		String name = scan.nextLine();
+		pirntBar();
+		//입력받은 이름과 일치하는 출석체크 목록을 확인
+		//2022.11.23 : O
+		for(Log log : logs) {
+			for(StudentLog slog : log.getSlogs()) {
+				if(slog.getStd().getName().equals(name)) {
+					System.out.println(log.getDate() + " : " + slog.getState());
+					
+				}
+			}
+		}
+	}
+	
+	private static void printLogsByDate(ArrayList<Log> logs) {
+		
+		//날짜입력
+		System.out.println("날짜 입력 : ");
+		String date = scan.nextLine();
+		pirntBar();
+		//날짜와 일치하는 출석기록확인
+		//학생명(생일) : O
+		for(Log log : logs) {
+			if(log.getDate().equals(date)) {
+				for(StudentLog slog : log.getSlogs()) {
+					String name = slog.getStd().getName();
+					String birth = slog.getStd().getBirthday();
+					System.out.println(name + "(" + birth + ") : " + slog.getState());
+				}
+			}
+		}
+		
+	}
+	
+	private static void updateLogs(ArrayList<Log> logs) {
+		//날짜를 입력
+		System.out.println("날짜 입력 : ");
+		String date = scan.nextLine();
+		pirntBar();
+		
+		if(!checkLogDate(logs, date)) {
+			pirntStr("해당 일자에 등록된 출석체크가 없습니다.");
+			return;
+		}
+		//이름과 생년 월일을 입력
+		System.out.println("이름 입력 : ");
+		String name = scan.nextLine();
+		System.out.println("생일 입력 : ");
+		String birth = scan.nextLine();
+		
+		//상태를 입력
+		System.out.println("상태 입력 : ");
+		String state = scan.nextLine();
+		pirntBar();
+		//입력한 정보와 일치하는 출석정보를 수정
+		for(Log log : logs) {
+			if(log.getDate().equals(date)) {
+				for(StudentLog slog : log.getSlogs()) {
+					String tmpName = slog.getStd().getName();
+					String tmpBirth = slog.getStd().getBirthday();
+					if(tmpName.equals(name) && tmpBirth.equals(birth)) {
+						slog.setState(state);
+					}
+				}
+				pirntStr("수정이 완료됐습니다.");
+				return;
+			}
+		}
+	}
+	
+	private static void deleteLogs(ArrayList<Log> logs) {
+		//날짜를 입력
+		System.out.println("날짜 입력 : ");
+		String date = scan.nextLine();
+		pirntBar();
+		
+		if(!checkLogDate(logs, date)) {
+			pirntStr("해당 일자에 등록된 출석체크가 없습니다.");
+			return;
+		}
+		for(int i =0; i <logs.size(); i++) {
+			if(logs.get(i).getDate().equals(date)) {
+				logs.remove(i);
+				pirntStr("삭제가 완료됐습니다.");
+				return;
+			}
+		}
+	}
+	
 }
+
+
+
 /*	pirntStr("");
 	switch(menu) {
-	case 1:
-		break;
-	case 2:
-		break;
-	case 3:
-		break;
+	case 1:		break;
+	case 2:		break;
+	case 3:		break;
+	
 	default:
 		pirntStr("메뉴를 잘못입력했습니다.");
 		printStr("잘못된 메뉴입니다.");
