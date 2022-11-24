@@ -25,7 +25,7 @@ public class FileStreamEx01 {
 				System.out.print(num + " ");
 			}
 		}catch(FileNotFoundException e) {
-			S	ystem.out.println("파일을 찾지 못했습니다.");
+			System.out.println("파일을 찾지 못했습니다.");
 		}catch (IOException e) {
 			e.printStackTrace();
 		}finally {
