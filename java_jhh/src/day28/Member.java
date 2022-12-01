@@ -41,7 +41,7 @@ public class Member implements Serializable {
 		joinDate = new Date();
 	}
 	public Member(String id, String pw) {
-		this(id, pw, Authority.MEMBER)
+		this(id, pw, Authority.MEMBER);
 	}
 }
 enum Authority{
