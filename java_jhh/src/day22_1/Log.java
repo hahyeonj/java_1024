@@ -12,5 +12,8 @@ public class Log {
 	public Log(ArrayList<StudentLog> stdLogs, String date) {
 		this.date = date;
 		this.slogs = stdLogs;//원래는 깊은 복사를 해야 하는데 간단하게 얕은 복사이용
-		}
+
+	
+	}
 }
+

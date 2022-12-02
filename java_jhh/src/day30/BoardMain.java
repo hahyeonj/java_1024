@@ -3,8 +3,9 @@ package day30;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Consumer;
 
-import day28.Board;
+
 
 /* 기능
  *  - 게시글 등록 
@@ -23,6 +24,7 @@ public class BoardMain {
 	
 	private static Scanner scan = new Scanner(System.in);
 	private static List<Board> boardList = new ArrayList<Board>();
+	private static List<Comment> commentList = new ArrayList<Comment>();
 	/* 기능*/
 	public static void main(String[] args) {
 		
@@ -33,6 +35,7 @@ public class BoardMain {
 		while(menu != 6) {
 			printMenu();
 			menu = scan.nextInt();
+			runMenu(menu);
 		}
 	}
 		/** 메뉴를 출력하는 메소드
@@ -62,19 +65,11 @@ public class BoardMain {
 		 */
 	public static void runMenu(int menu) {
 		switch(menu) {
-		case 1:
-			insertBoard();
-			break;
-		case 2:
-			updateBoard();
-			break;
-		case 3:
-			deleteBoard();
-			break;
-		case 4:
-			break;
-		case 5:
-			break;
+		case 1:	insertBoard();		break;
+		case 2: updateBoardList();	break;
+		case 3: deleteBoardList();	break;
+		case 4:	printBoardList();	break;
+		case 5: printBoard();		break;
 		case 6:
 			System.out.println("프로그램 종료");
 			break;
@@ -94,24 +89,228 @@ public class BoardMain {
 		int num = scan.nextInt();
 		scan.nextLine();
 		
-		System.out.print("제목 : ");
-		String title = scan.nextLine();
-		
-		System.out.print("내용 : ");
-		String writer = scan.nextLine();
-		
-		System.out.print("작성자 : ");
-		String contents = scan.nextLine();
 		//게시글 객체 생성
-		Board board = new Board(num, title, contents, writer);
+		inputBoard(num);
+		//게시글 객체 생성
+		Board board = new Board(num);
 		//번호 중복 확인
 		if(boardList.contains(board)) {
 			System.out.println("중복된 번호가 있습니다.");
 		}
 		//게시글 리스트에 추가
 		boardList.add(board);
+	}
+	
+
+	/**inputBoardNum : Scanner를 통해 번호를 입력받아 알려주는 메소드
+	 * @return 입력받은 게시글 번호
+	 */
+
+	public static int inputBoardNum() {
+		System.out.println("번호 : ");
+		int num = scan.nextInt();
+		scan.nextLine();
+		return num;
+	}
+	
+	/**inputBoard : 게시글 번호가 주어지면 제목, 내용, 작성자 입력하여 
+	 * 				게시글 객체를 반환하는 메소드
+	 * @param num 게시글 번호
+	 * @return 게시글 객체
+	 */
+	public static Board inputBoard (int num) {
+		
+		System.out.print("제목 : ");
+		String title = scan.nextLine();
+		
+		System.out.print("내용 : ");
+		String contents = scan.nextLine();
+		
+		System.out.print("작성자 : ");
+		String writer = scan.nextLine();
+		
+		//개시글 객체 생성
+		return  new Board(num, title, contents, writer);
+	}
+	
+	
+	/**updateBoard : 게시글 리스트에 주어진 게시글을 수정하는 메소드로 수정하면
+	 * 				true를 실패하면 false를 반환
+	 * @param boardList 게시글 리스트
+	 * @param board 수정할 게시글
+	 * @return 수정 성공 true, 실패 false
+	 */
+	public static boolean updateBoard(List<Board>boardList, Board board) {
+		if(boardList.size() == 0)
+			return false;
+		int index = boardList.indexOf(board);
+		if(index == -1)
+			return false;
+		boardList.set(index, board); // 수정 내용이 input에서 다 있기때문에 update 대신 set도 가능 
+		return true;
+	}
+	
+	
+	/**updateBoardList : 게시글 정보를 입력받아 수정하는 메소드
+	 */
+	public static void updateBoardList() {
+		int num = inputBoardNum();
+		Board board = inputBoard(num);
+		if(updateBoard(boardList, board)) {
+			System.out.println("게시글을 수정했습니다.");
+		}else {
+			System.out.println("게시글을 수정하지 못했습니다.");
+		}
 		System.out.println(boardList);
+	}
+	
+	
+	/**deleteBoard : 게시글 리스트에 주어진 게시글을 수정하는 메소드
+	 * @param boardList 게시글 리스트
+	 * @param num 삭제할 게시글 번호
+	 * @return 삭제 성공 true, 실패 false
+	 * 
+	 * */
+	public static boolean deleteBoard(List<Board>boardList, int num) {
+		Board board = new Board(num);
+		return boardList.remove(board);
+	}
+	
+	/**deleteBoardList : 게시글 번호를 입력받아 삭제하는 메소드 
+	 */
+	public static void deleteBoardList() {
+		int num = inputBoardNum();
+		if(deleteBoard(boardList, num))
+			System.out.println("게시글을 삭제 했습니다.");
+		else
+			System.out.println("게시글을 삭제하지 못했습니다.");
+	}
+	
+	/**printBoardList : 게시글 전체를 출력하는 메소드
+	 */
+	public static void printBoardList() {
+		boardList.forEach(b->System.out.println(b));
 		
 	}
-	 
+	/** printSubmenu : 게시글 확인에서 필요한 서브 메뉴를 출력
+	 */
+	public static void printSubmenu() {
+		System.out.println("메뉴");
+		System.out.println("1. 댓글 등록");
+		System.out.println("2. 댓글 확인");
+		System.out.println("3. 이전");
+		System.out.print("메뉴 선택 : ");
+	}
+	
+	/**runPrintSubmenu : 선택한 서브 메뉴를 실행하는 메소드,
+	 * 					 우선은 서브메뉴를 선택하면 선택한 서브메뉴를
+	 * 					 콘솔에 출력하는 기능으로 일단 구현
+	 * 
+	 * @param submen 선택한 서브 메뉴
+	 * @param boardNum 선택한 게시글 번호
+	 */
+	public static void runPrintSubmenu(int submenu, int boardNum) {
+
+		switch(submenu) {
+		case 1: insertComentList(boardNum); break;
+		case 2: printCommentList(boardNum); break;
+		case 3: System.out.println("이전"); break;
+		default:
+			System.out.println("잘못된 메뉴입니다.");
+		}
+	}
+	
+	/**printBoard : 게시글 번호를 입력받아 입력받은 게시글을 출력하고
+	 * 				서브 메뉴를 출력하고, 서브메뉴를 선택하면
+	 * 				선택한 서브 메뉴를 실행하는 메소드
+	 */
+	public static void printBoard() {
+		int num = inputBoardNum();
+		Board board = new Board(num);
+		//System.out.println(boardList.indexOf(num));
+		int index = boardList.indexOf(board);
+		if(index == -1) {
+			System.out.println(("등록되지 않았거나 삭제된 게시글입니다."));
+			return;
+		}
+		board = boardList.get(index);
+		board.print();
+		int submenu = -1;
+		do {
+			printSubmenu();
+			submenu = scan.nextInt();
+			scan.nextLine();
+			runPrintSubmenu(submenu, num);
+		}while(submenu != 3);
+	}
+	
+	/**insertComment : 댓글을 댓글 리스트에 추가하는 메소드
+	 * @param commentList 댓글 리스트
+	 * @param comment 댓글
+	 * @return 댓글 추가 여부
+	 */
+	public static boolean insertComment(List<Comment>commentList, Comment comment) {
+		int index = commentList.indexOf(comment);
+		if(index != -1) {
+			System.out.println("이미 등록된 댓글 번호입니다.");
+			return false;
+		}
+		commentList.add(comment);
+		System.out.println("댓글 등록이 완료됐습니다.");
+			return true;
+		/*System.out.print("댓글 번호 : ");
+		num = scan.nextInt();
+		scan.nextLine();
+		
+		System.out.print("내용 : ");
+		String contents = scan.nextLine();
+		
+		System.out.print("작성자 : ");
+		String writer = scan.nextLine();
+		Comment comment = new Comment(num, contents, writer);
+		
+		
+		
+		System.out.println("더 작성하시겠습니까?");
+		
+		return true;*/			
+	}
+	
+	/**insertComentList : 댓글 정보를 입력받아 댓글을 추가하는 메소드
+	 * @param boardNum 선택한 게시글 번호
+	 */
+	public static void insertComentList(int boardNum) {
+		int num = inputBoardNum();
+	
+		System.out.print("작성자 : ");
+		String writer = scan.nextLine();
+		
+		System.out.print("내용 : ");
+		String contents = scan.nextLine();
+		
+		Comment comment = new Comment(num, contents, writer, boardNum);
+		
+		if(insertComment(commentList, comment)) {
+			System.out.println("댓글 등록 완료");
+		}else {
+			System.out.println("이미 등록된 댓글 번호");
+			}
+	}
+	
+	/** printCommentList
+	 * @param boardNum 선택한 게시글 번호 
+	 **/
+	public static void printCommentList(int boardNum){
+		if(commentList.size() == 0) {
+			System.out.println("등록된 댓글이 없습니다.");
+			return;
+		}
+		int count = 0;
+		commentList.forEach(c->{
+				if(c.getBoardNum() == boardNum){
+						System.out.println(c);
+			}
+		});
+	}
+	
 }

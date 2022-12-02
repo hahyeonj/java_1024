@@ -45,7 +45,7 @@ public class Board {
 	}
 	
 	public void print() {
-		System.out.println("번호 " + num);
+		System.out.println("번호 : " + num);
 		System.out.println("제목 : " + title);
 		System.out.println("작성자 : " + writer);
 		System.out.println("내용 " + contents);
@@ -61,5 +61,7 @@ public class Board {
 	public Board(int num) {
 		this.num = num;
 	}
+	
+	
 	
 }
