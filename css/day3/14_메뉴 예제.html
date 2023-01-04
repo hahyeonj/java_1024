@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 예제</title>
+    <style>
+        .menu-list{
+            list-style: none; padding: 0;
+            border: 5px solid red; 
+        }
+        .menu-list::after{
+            clear: both; content: ''; display: block;
+        }
+        .menu-link{
+            text-decoration: none; color: black;
+            display: block; height: 100%;
+            text-align: center; line-height: 50px;
+        }
+        .menu-item{
+            float: left; width: 33.33%; height: 50px;
+        }
+        .menu-item + .menu-item{
+            border-left: 5px solid red; margin-left: -5px;
+        }
+        .menulists{
+            list-style: none; 
+            border: 5px solid lightblue;
+            display: 0;
+        }
+        .menu-item:hover{
+            .menu
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="menu-list">
+            <li class="menu-item">
+               
+                <a href=“#menulists”> 메뉴1</a>
+                    <ul class="menulists 1">
+                        <li class="menu-item-s1">
+                            소메뉴1-1
+                        </li>
+                        <li class="menu-item-s2">
+                            소메뉴1-2
+                        </li>
+                        <li class="menu-item-s3">
+                            소메뉴1-3
+                        </li>
+                    </ul>
+                
+                
+            </li>
+            <li class="menu-item">
+                메뉴2
+                <span class="dot">
+                <ul class="menulists 2">
+                    <li class="menu-item-s1">
+                        소메뉴1-1
+                    </li>
+                    <li class="menu-item-s2">
+                        소메뉴1-2
+                    </li>
+                    <li class="menu-item-s3">
+                        소메뉴1-3
+                    </li>
+                </ul>
+            </span>
+            </li>
+            <li class="menu-item">
+                메뉴3
+                <ul class="menulists 3">
+                    <li class="menu-item-s1">
+                        소메뉴1-1
+                    </li>
+                    <li class="menu-item-s2">
+                        소메뉴1-2
+                    </li>
+                    <li class="menu-item-s3">
+                        소메뉴1-3
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+</body>
+</html>
