@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          *{padding: 0; margin: 0;}
+        .container-box{
+            height: 54px; width: 400px; 
+            border: 2px solid purple;
+        }
+        .box1{
+            margin-left: 10px; margin-top: 10px; margin-bottom: 10px;
+            height: 30px; width: 325px;
+            border: 2px solid red;
+           float: left;
+        }
+        .box2{
+            width: 50px; height: 56px;
+            border-left: 2px solid purple;
+            margin-top: -2px;
+            
+            float: right;
+        }
+        .menu-link{
+            display: block; height: 100%; border: 5px ;
+            text-align: center; line-height: 56px; 
+            font-size: 5px; color: #000; font-weight: bold;
+        }
+
+        .container-box::after{
+            clear: both; display:block; content: '';
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="container-box">
+        <div class="box1">
+        </div><div class="box2"><a href="#" class="menu-link">검색</a></div>
+    </div>
+
+
+
+</body>
+</html>
