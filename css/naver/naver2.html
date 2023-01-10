@@ -8,7 +8,7 @@
 	<style>
 		* { margin: 0; padding: 0;}
 		ul,ol{ list-style: none;}
-		a{	text-decoration: none;}
+		a{text-decoration: none;}
 		#body{ 
 			min-width: 1190px;
 			font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
@@ -119,9 +119,7 @@
         }
         .container-search{
             border-bottom: 1px solid #e4e8eb ;
-            
         }
-
 
         /* 메뉴 */
         .group-menu>*{
@@ -133,7 +131,6 @@
         .group-menu .item-fix-menu{
             float: left;
         }
-       
         .group-menu .item-fix-menu~.item-fix-menu{
             margin-left: 12px;
         }
@@ -165,7 +162,6 @@
         .group-menu .item-fix-menu:nth-child(6){
             padding: 5px 0;
             margin-left: 12px;
-
         }
         .group-menu .item-fix-menu:nth-child(5) a,
         .group-menu .item-fix-menu:nth-child(6) a{
@@ -183,7 +179,6 @@
         .group-menu .item-favority-menu~.item-favority-menu{
            margin-left: 12px;
         }
-    
 
         .group-menu .btn-more{
             margin-left: 17px;
@@ -197,7 +192,6 @@
             background-position: -402px -296px;
             vertical-align: 2px; margin-left: 7px;
          }    
-        
          .group-weather{
             width: 270px; height: 52px; top: 0; right: 0;
             bottom: 0; overflow: hidden; text-align: right;
@@ -213,15 +207,14 @@
         /* 메인 */
         .container-body .inner-container{
             padding: 20px 30px;
-            
         }
         .box-body .box-body-left{
             height: 400px; 
             float: left; width: 750px;
         }
         .box-body .box-body-right{
-            height: 400px; 
-            float: right; width: 350px;
+            width: 350px; position: relative;
+            float: right;  background-color: #fff;
         }
         .box-body .box-body-left1{
             height: 135px; position: relative;
@@ -245,24 +238,174 @@
             width: 1px; right: 0; bottom: 0; top: 0; 
         }
 
+        /* 메인 왼쪽 2번째 컨텐츠*/
+
+        .box-body .box-body-left2{
+            margin-top: 12px;  width: 750px;
+        }
+
+        .box-body-left2 .box-head{
+            
+            padding: 12px 15px 11px 15px; border: 1px solid #dae1e6; background-color: #f7f9fa;
+            line-height: 24px; position: relative;
+        }
+        .box-body-left2 .box-contents{
+            float: left;
+        }
+        .box-body-left2 .box-service{
+            float: right;
+        }
+        
+        .box-body-left2 .link-media{
+            float: left; font-weight: bold; font-size: 13px; letter-spacing: -.3px;
+            padding-right: 12px; margin-right: 7px; position: relative; color: #000
+        }
+
+        .box-body-left2 .link-media::after{
+            width: 6px;  height: 10px; display: inline-block; content: ''; 
+            background-position: -262px -112px; vertical-align: top;
+            position: absolute; top: 7px; right: 0;
+        }
+
+        .box-body-left2 .list-issue{
+            width: 310px; height: 24px; overflow: hidden;  float: left; 
+        }
+        .box-body-left2 .link-issue{
+            display: block; overflow: hidden;  white-space: nowrap; text-overflow: ellipsis;
+            color: #202020;  font-size: 13px; letter-spacing: -.2px;
+        }
+        .box-body-left2 .box-service>*{
+            float: left; line-height: 24px; font-size: 13px; color: #202020; letter-spacing: -.2px;
+            font-weight: bold; margin: 0 4px 0 7px;
+             
+        }
+        .box-body-left2 .item-issue:hover .link-issue{
+            text-decoration: underline;
+        }
+        .box-body-left2 .box-service>.link-news-home{
+            margin: 0; color: #3565c9;
+        }
+        .box-body-left2 .box-service>.link-news-home::after{
+            width: 3px; height: 3px; display: inline-block; content: '';
+            vertical-align: 3px;  border-radius: 50%; background-color: #c8ccd1;
+            margin-left: 8px;
+        }
+
+        .box-body-left2 .box-title{
+            padding: 22px 0 16px; font-size: 14px; line-height: 18px; display: block;
+            letter-spacing: -.2px;
+        }
+        .box-body-left2 .link-news-stand{
+            float: left;
+            color: #000;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .box-body-left2 .link-news-stand::before{
+            width: 27px; height: 24px; display: inline-block; content: '';
+            background-position: -272px -342px;
+            vertical-align: top; margin: -6px 1px 0 0;
+        }
+        .box-body-left2 .link-news-stand::after{
+            width: 7px; height: 11px; display: inline-block; content: '';
+            background-position: -410px -213px;
+            margin-left: 6px; vertical-align: -1px;
+        }
+        .box-body-left2 .link-subscribe{
+            float: left; margin-left: 10px; color: #505050;
+
+        }
+        .box-body-left2 .link-whole{
+            color: #000; font-weight: bold;
+        }
+        .box-body-left2 .link-whole::before{
+            background-color: #c7ccd1;
+            width: 4px; height: 4px;  display: inline-block; content: '';
+            border-radius: 50%;          margin: 0 8px 0 4px;
+            vertical-align: 3px; margin-left: 10px;
+        }
+           
+
+        /* 메인 오른쪽 첫번째 박스 */
+       
+        .box-body-right1{
+            padding: 16px 16px 12px 17px;
+            background-color: #f7f9fa;
+            border: 1px solid #dae1e6; display: block;
+            letter-spacing: -.2px;     text-decoration: none;
+        }
+        .box-body-right1 .box-title{
+            padding-left: 3px;
+            color: grey;
+        }
+
+        .box-body-right1 .link-login{
+           display: block; padding: 15px 0; font-size: 13px; text-align: center;
+           border-radius: 2px; background-color: #19ce60; border: 1px solid #15c654;
+           margin-top: 11px;  font-weight: bold; color: #fff;
+        }
+
+        .box-body-right1 .icon-login{
+            width: 60px; height: 12px; display: inline-block;
+            background-position: -202px -296px; vertical-align: top;
+            margin: 2px 5px 0 0;
+        }
+        .box-body-right1 .box-service{
+            margin: 14px 8px 0 4px; ; display: block; letter-spacing: -.2px;
+        }
+        .box-body-right1 .box-service>*:hover{
+            color: #505050; text-decoration: underline;
+        }
+        .box-body-right1 .box-service::before{
+            width: 10px; height: 14px; display: inline-block; content: '';
+            background-position: -408px -55px; vertical-align: top;
+            margin: -1px 1px 1px;
+        }
+        .box-body-right1 .link-find-id{
+            color: #404040
+        }
+
+        .box-body-right1 .link-find-pw{
+            color: #404040
+        }
+        .box-body-right1 .link-find-pw::before{
+            width: 3px; height: 3px; display: inline-block; content: ''; border-radius: 50%;
+            vertical-align: 3px; margin: 0 5px 0 2px; background-color: #d7dce0;
+        }
+        .box-body-right1 .link-signup{
+            float: right; color: #505050;
+        }
+        .box-body-right1 .link-signup::before{
+            width: 11px; height: 11px; display: inline-block; content: '';
+            background-position: -401px -245px; vertical-align: top;
+            margin: 2px 5px 0 0;  
+        }
+
+       
         /* 공통 */
         .clearfix::after{
             clear: both; display: block; content: '';
         }
 		.blind{
 			position: absolute;
-			width: 1px; height: 1px;margin: -1px; overflow: hidden;
+			width: 1px; height: 1px; margin: -1px; overflow: hidden;
 		}
 
 		.img1::after, .icon-jrnaver.img1, .icon-happybean.img1,
 		.icon-search.img1,.icon-auto-complete.img1,
         .icon-kbd.img1, .icon-naver-logo.img1, .icon-mail.img1,
         .icon-shopping.img1, .icon-shopping-live.img1, .icon-tv.img1,
-        .icon-more.img1{
+        .icon-more.img1, .icon-login.img1, 
+        .box-body-right1 .box-service::before,
+        .box-body-right1 .link-signup::before,
+        .box-body-left2 .link-media::after,
+        .box-body-left2 .link-news-stand::before,
+        .box-body-left2 .link-news-stand::after{
 			background-image: url(img/img1.png);
 			background-size: 442px 428px;
 		}
         
+
     
 
 	</style>
@@ -395,7 +538,7 @@
 		<div class="container-body">
             <div class="inner-container">
                 <div class="box-body clearfix">
-
+                    
                     <div class="box-body-left">
                         <div class="box-body-left1">
                             <iframe src="add1.html" frameborder="0"  class="frame")></iframe>
@@ -404,11 +547,83 @@
                             <span class="line line-left"></span>
                             <span class="line line-right"></span>
                         </div>
-                    </div>
+                        <!-- 메인 왼쪽 박스 첫번째-->
+                        <div class="box-body-left2">
+                            <div class="box-head">
+                                <div class="box-in clearfix">
+                                    <div class="box-contents">
+                                        <a href="#" class="link-media">연합뉴스</a>
+                                        <ul class="list-issue">
+                                            <li class="item-issue">
+                                                <a href="#" class="link-issue">전세사기 피해자 "나라에서 '빌라왕' 시세조작에 판 깔아준 셈"</a>
+                                            </li>
+                                            <li class="item-issue">
+                                                <a href="#" class="link-issue">전세사기 피해자 "나라에서 '빌라왕' 시세조작에 판 깔아준 셈"</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="box-service">
+                                        <a href="#" class="link-news-home">뉴스홈</a>
+                                        <a href="#" class="link-entertain">연예</a>
+                                        <a href="#" class="link-sports">스포츠</a>
+                                        <a href="#" class="link-economic">경제</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-title">
+                                <div class="box-in clearfix">
+                                    <div class="box-contents">
+                                        <a href="#" class="link-news-stand">뉴스스탠드</a>
+                                        <a href="#" class="link-subscribe">구독한 언론사</a>
+                                        <a href="#" class="link-whole">전체언론사
+                                                <a href="#" class="detail">
+                                                    <i class="icon-detail"></i>
+                                                </a>
+                                                <a href="#" class="big">
+                                                    <i class="icon-big"></i>
+                                                </a>
+                                                <a href="#" class="setting">
+                                                    <i class="icon-setting"></i>
+                                                </a>
+                                        </a>
 
+                                    </div>
+                                   
+                                </div>
+
+
+                            </div>
+                            <div class="box-body"></div>
+                            
+                        </div>
+                        <!-- 메인 왼쪽 박스 두번째-->  
+                        <div class="box-body-left3">
+                           
+
+
+                        </div>
+                        <!-- 메인 왼쪽 박스 세번쨰-->
+                    </div>
+                    <!-- 메인 왼쪽 박스 -->
                     <div class="box-body-right">
+                        <div class="box-body-right1">
+                            <div class="box-in-right1">
+                                <p class="box-title">네이버를 더 안전하고 편리하게 이용하세요</p>
+                                <a href="#" class="link-login">
+                                    <i class="icon-login img1"></i>로그인</a>
+                                <div class="box-service clearfix">
+                                    <a href="#" class="link-find-id"> 아이디 </a> 
+                                    <a href="#" class="link-find-pw">비밀번호찾기</a>
+                                    <a href="#" class="link-signup">회원가입</a>
 
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!--메인 오른쪽 박스 첫번째 -->
+                        
                     </div>
+                    <!-- 메인 오른쪽 박스 -->
                 </div>
                 
             </div>
