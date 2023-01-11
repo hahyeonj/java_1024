@@ -295,36 +295,72 @@
             padding: 22px 0 16px; font-size: 14px; line-height: 18px; display: block;
             letter-spacing: -.2px;
         }
-        .box-body-left2 .link-news-stand{
+        .box-body-left2 .box-title .box-news-stand{
             float: left;
+        }
+        .box-body-left2 .box-title .box-news-service{
+            float: right;
+        }
+        .box-body-left2 .box-title .link-news-stand{
             color: #000;
             font-weight: bold;
             white-space: nowrap;
+            float: left;
         }
-        .box-body-left2 .link-news-stand::before{
+        .box-body-left2 .box-title .link-news-stand::before{
             width: 27px; height: 24px; display: inline-block; content: '';
-            background-position: -272px -342px;
-            vertical-align: top; margin: -6px 1px 0 0;
+            vertical-align: top; background-position: -272px -342px;
+            margin: -6px 1px 0 0;
         }
-        .box-body-left2 .link-news-stand::after{
+        .box-body-left2 .box-title .link-news-stand::after{
             width: 7px; height: 11px; display: inline-block; content: '';
             background-position: -410px -213px;
             margin-left: 6px; vertical-align: -1px;
         }
-        .box-body-left2 .link-subscribe{
-            float: left; margin-left: 10px; color: #505050;
+        .box-body-left2 .box-title .box-list{
+            float: left; margin-left: 10px;
+        }
+        .box-body-left2 .box-title .btn-my-list,
+        .box-body-left2 .box-title .btn-all-list{
+            font-size: 14px; color: #505050; letter-spacing: -.2px;
 
         }
-        .box-body-left2 .link-whole{
-            color: #000; font-weight: bold;
+        .box-body-left2 .box-title .btn-my-list[aria-selected=true],
+        .box-body-left2 .box-title .btn-all-list[aria-selected=true]{
+            font-weight: bold; color: #000; 
+
         }
-        .box-body-left2 .link-whole::before{
-            background-color: #c7ccd1;
+        .box-body-left2 .box-title .btn-all-list::before{
             width: 4px; height: 4px;  display: inline-block; content: '';
-            border-radius: 50%;          margin: 0 8px 0 4px;
-            vertical-align: 3px; margin-left: 10px;
+            vertical-align: 3px; background-color: #c7ccd1;
+            margin: 0 8px 0 4px; border-radius: 50%;
         }
-           
+
+        .box-body-left2 .box-title .box-service>*{
+            float: left; padding: 0 9px;
+        }
+        .box-body-left2 .box-title .icon-press-list{
+            width: 14px; height: 13px; display: inline-block; content: '';
+            vertical-align: top; background-position: -244px -310px; opacity: 0.7;
+        } 
+        .box-body-left2 .box-title .icon-press-thumb{
+            width: 13px; height: 13px; display: inline-block; content: '';
+            vertical-align: top; background-position: -291px -310px; opacity: 0.7;
+        } 
+        .box-body-left2 .box-title .icon-set{
+            width: 13px; height: 13px; display: inline-block; content: '';
+            vertical-align: top; background-position: -102px -386px; opacity: 0.7;
+            margin: -1px 0 1px;
+        } 
+        .box-body-left2 .box-title .box-service>a:hover i{
+            opacity: 1;
+        }
+        .box-body-left2 .box-title .box-service [aria-selected=true] .icon-press-list{
+            opacity: 1; background-position: -260px -310px;
+        }
+        .box-body-left2 .box-title .box-service [aria-selected=true] .icon-press-thumb{
+            opacity: 1; background-position: -276px -310px ;
+        }
 
         /* 메인 오른쪽 첫번째 박스 */
        
@@ -380,6 +416,7 @@
             background-position: -401px -245px; vertical-align: top;
             margin: 2px 5px 0 0;  
         }
+        
 
        
         /* 공통 */
@@ -400,7 +437,8 @@
         .box-body-right1 .link-signup::before,
         .box-body-left2 .link-media::after,
         .box-body-left2 .link-news-stand::before,
-        .box-body-left2 .link-news-stand::after{
+        .box-body-left2 .link-news-stand::after
+        {
 			background-image: url(img/img1.png);
 			background-size: 442px 428px;
 		}
@@ -570,25 +608,31 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="box-title">
-                                <div class="box-in clearfix">
+                            <div class="box-title clearfix">
+                                <div class="box-news-stand">
                                     <div class="box-contents">
                                         <a href="#" class="link-news-stand">뉴스스탠드</a>
-                                        <a href="#" class="link-subscribe">구독한 언론사</a>
-                                        <a href="#" class="link-whole">전체언론사
-                                                <a href="#" class="detail">
-                                                    <i class="icon-detail"></i>
-                                                </a>
-                                                <a href="#" class="big">
-                                                    <i class="icon-big"></i>
-                                                </a>
-                                                <a href="#" class="setting">
-                                                    <i class="icon-setting"></i>
-                                                </a>
-                                        </a>
+                                        <div class="box-list">
+                                            <a href="#" class="btn-my-list" aria-selected="false">구독한 언론사</a>
+                                            <a href="#" class="btn-all-list" aria-selected="true">전체언론사</a>
+                                        </div>
 
+                                        
                                     </div>
-                                   
+                                   <div class="box-service">
+                                        <a href="#" class="btn-press" aria-selected="true">
+                                            <i class="icon-press-list"></i>
+                                            <span class="blind">리스트형</span>
+                                        </a>
+                                        <a href="#" class="btn-thumb">
+                                            <i class="icon-press-thumb"></i>
+                                            <span class="blind">썸네일형</span>
+                                        </a>
+                                        <a href="#" class="list-newsset">
+                                            <i class="icon-set"></i>
+                                            <span class="blind"></span>
+                                        </a>
+                                   </div>
                                 </div>
 
 
