@@ -18,6 +18,7 @@
 		.inner-container{ 
 			width: 1130px; margin: 0 auto; padding: 0 30px;
 		}
+
 		/* 검색 */
 		.box-search{
 			position: relative; height: 160px;
@@ -62,6 +63,7 @@
 		.box-search .link-happybean:hover .icon-happybean{
 			background-position: -380px -199px;
 		}
+
 		.box-search .box-search-area{
 			position: absolute; top: 50%; left: 238px;
 			margin-top: -28px;
@@ -107,6 +109,7 @@
 			position: absolute; top: 50%; left: 50%;
 			margin: -6px 0 0 -10px;
 		}
+
 		.box-search .icon-naver-logo{
 			width: 222px; height: 52px; display: inline-block;
 			vertical-align: top; background-position: 0 -158px;
@@ -118,6 +121,7 @@
 		.container-search{
 			border-bottom: 1px solid #e4e8eb;
 		}
+
 		/* 메뉴 */
 		.group-menu>*{
 			float: left;
@@ -194,6 +198,7 @@
 		.container-menu{
 			box-shadow: 0 1px 3px 0 rgba(0,0,0,0.12);
 		}
+
 		/* 메인 */
 		.container-body .inner-container{
 			padding: 20px 30px;
@@ -201,7 +206,7 @@
 		.box-body .box-body-left{
 			float: left; width: 750px;
 		}
-		.box-body .box-body-right{ 
+		.box-body .box-body-right{
 			float: right; width: 350px;
 		}
 		.box-body .box-body-left1{
@@ -274,6 +279,7 @@
 			background-position: -401px -245px;	vertical-align: top;
 			margin: 2px 5px 0 0;
 		}
+
 		/* 메인 왼쪽 2번째 컨텐츠 */
 		.box-body .box-body-left2{
 			margin-top: 12px;
@@ -448,6 +454,7 @@
 		.box-body-left2 .btn-next:hover{
 			background-position: 0 -296px;
 		}
+
 		/* 메인 오른쪽 두번째 컨텐츠 */
 		.box-body-right2{
 			position: relative; border: 1px solid #dae1e6; 
@@ -497,60 +504,58 @@
 		.box-body-right3{
 			height: 200px; overflow: hidden; position: relative;
 		}
-
 		/* 왼쪽 3번째 컨텐츠 */
 		.box-body-left3{
-			margin: 35px 0 27px; letter-spacing: -.25px;
+			margin: 35px 0 27px;
 		}
 		.box-body-left3 .box-title{
 			margin-bottom: 17px;
 		}
-	
 		.box-body-left3 .area-title{
-			float: left; 
+			float: left; letter-spacing: -.25px;
 		}
 		.box-body-left3 .area-info{
-			float: right; 
+			float: right; letter-spacing: -.25px;
 		}
 		.box-body-left3 .area-title .title{
 			font-size: 14px; color: #000;
 		}
-
 		.box-body-left3 .area-title .dsc{
-			margin-left: 8px;
+			color: gray; margin-left: 8px;
 		}
-		.box-body-left3 .area-info .area-info{
+		.box-body-left3 .area-info .info{
 			color: gray;
 		}
-			
 		.box-body-left3 .area-info .info strong{
 			color: #000;
 		}
 		.box-body-left3 .area-info .btn-set{
 			color: #505050; margin-left: 14px; position: relative;
 		}
+		.box-body-left3 .area-info .btn-set::before{
+			width: 11px; height: 11px; background-position: -358px -310px; 
+			margin-right: 4px; display: inline-block; vertical-align: -1px; content: '';
+			opacity: .7;
+		}
 		.box-body-left3 .area-info .btn-set:hover{
 			text-decoration: underline;
-		}		
-		.box-body-left3 .area-info .btn-set::before{
-			width: 11px; height: 11px; background-position: -358px -310px;
-			margin-right: 4px; display: inline-block; vertical-align: -1px;
-		    opacity: .7; content: '';
+		}
+		.box-body-left3 .area-info .btn-set:hover::before{
+			opacity: 1;
 		}
 		.box-body-left3 .area-info .btn-set::after{
-			width: 1px;  height: 12px; position: absolute; top: 2px; left: -8px;
+			width: 1px; height: 12px; position: absolute; top: 2; left: -8px;
 			content: ''; background-color: #e4e8eb;
 		}
 		.box-body-left3 .box-menu{
 			position: relative;
 		}
 		.box-body-left3 .box-menu::before{
-			position: absolute;  top: 0; right: 0; bottom: 0; left: 0;border: 1px solid #dae1e6;
+			position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 1px solid #dae1e6;
 			content: '';
-    
 		}
 		.box-body-left3 .box-menu .box-in{
-			overflow: hidden;			
+			overflow: hidden;
 		}
 		.box-body-left3 .box-menu .list-menu{
 			font-size: 0; line-height: 0; white-space: nowrap;
@@ -560,23 +565,25 @@
 			width: 94px; position: relative;
 		}
 		.box-body-left3 .box-menu .item-menu:nth-child(8n+1){
-			width: 92px
+			width: 92px;
 		}
 		.box-body-left3 .box-menu .btn-menu{
-			display: block; text-align: center;font-weight: bold;  font-size: 13px;
-    		border-right: 1px solid #dae1e6; color: #000;
-   			line-height: 49px;
+			display: block; text-align: center; font-weight: bold; font-size: 13px;
+			border-right: 1px solid #dae1e6; color: #202020; letter-spacing: -.25px;
 		}
 		.box-body-left3 .box-menu .icon-middot{
-			width: 2px; height: 2px; display: inline-block;  border-radius: 50%;
-    		background-color: rgba(32,32,32,.8); vertical-align: 4px; margin: 0 2px;  
+			width: 2px; height: 2px; display: inline-block; border-radius: 50%;
+			background-color: rgba(32,32,32,.8); vertical-align: 4px; margin: 0 2px;
 		}
+
 		.box-body-left3 .item-menu [aria-selected=true]{
 			position: relative; margin: 0 -1px; border-radius: 1px; 
 			box-shadow: 0 3px 6px 0 rgba(0,0,0,.16);
 			color: #fff !important;
 		}
-		ox-body-left3 .item-menu .enter:hover{ color: #e65da0;}
+
+       
+		.box-body-left3 .item-menu .enter:hover{ color: #e65da0;}
 		.box-body-left3 .item-menu .sports:hover{ color: #0147b5;}
 		.box-body-left3 .item-menu .car:hover{ color: #4a94e1;}
 		.box-body-left3 .item-menu .webtton:hover{ color: #66c971;}
@@ -597,7 +604,51 @@
 		.box-body-left3 .item-menu .living[aria-selected=true]{ background-color: #c08d31;}
 		.box-body-left3 .item-menu .book[aria-selected=true]{ background-color: #42be6f;}
 		.box-body-left3 .item-menu .beauty[aria-selected=true]{ background-color: #8449ca;}
+ 
+        /* 오른쪽 4번째 컨텐츠 */
+        .box-body-right4{
+            width: 350px; margin-top: 15px;
+        }
 
+        .box-body-right4 .box-title{
+            padding: 12px 0 13px; line-height: 17px; font-weight: bold;
+        }
+        .box-body-right4 .link-trend-shopping{
+            float: left; font-size: 13px; letter-spacing: -.25px; color: #000;
+            margin: 2px 0 0 1px; 
+        }
+        .box-body-right4 .link-trend-shopping:hover{
+            text-decoration: underline;
+        }
+        .box-body-right4 .link-trend-shopping::before{
+           width: 15px; height: 15px; display: inline-block;
+           background-position: -109px -22px; content: '';
+           margin-right: 4px; vertical-align: -3px;
+        }
+        .box-body-right4 .link-trend-shopping::after{
+            width: 5px; height: 9px; display: inline-block;
+            background-position: -109px -49px; content: '';
+            margin-left: 7px; vertical-align: 0;
+        }
+        .box-body-right4 .box-title .box-btn {
+            float: right;;
+        }
+        .box-body-right4 .box-title .box-btn>a{
+            float: left;  font-size: 13px; color: #202020; font-weight: bold;
+            padding: 0 1px; border-bottom: 2px solid transparent; letter-spacing: -.25px;
+        } 
+        .box-body-right4 .box-title .box-btn>a~a{
+           margin-left: 11px;
+        } 
+        .box-body-right4 .box-title .box-btn [aria-selected="true"]{
+            color: #03c75a; border-color: #19ce60;
+        }
+
+
+        .box-body-right4 
+        .box-body-right4 
+        .box-body-right4 
+        .box-body-right4 
 
 
 		/* 공통 */
@@ -608,6 +659,7 @@
 			position: absolute;
 			width: 1px; height: 1px;margin: -1px; overflow: hidden;
 		}
+
 		.img1::after, .icon-jrnaver.img1, .icon-happybean.img1,
 		.icon-search.img1,.icon-auto-complete.img1,
 		.icon-kbd.img1, .icon-naver-logo.img1, .icon-mail.img1,
@@ -629,6 +681,10 @@
 			background-image: url(img/img1.png);
 			background-size: 442px 428px;
 		}
+        .img2-after::after, .img2-before::before{
+            background-image: url(img/img2.png);
+			background-size: 129px 101px;
+        }
 		
 	</style>
 </head>
@@ -759,7 +815,7 @@
 							<span class="line line-left"></span>
 							<span class="line line-right"></span>
 						</div>
-						<!-- 메인 왼쪽 첫번째 박스 -->
+						<!-- 메인 왼쪽 첫번째 박스 끝-->
 						<div class="box-body-left2">
 							<div class="box-head">
 								<div class="box-in clearfix">
@@ -776,7 +832,7 @@
 									</div>
 									<div class="box-service">
 										<a href="#" class="link-news-home">뉴스홈</a>
-										<a href="#" class="link-entertain">연애</a>
+										<a href="#" class="link-entertain">연예</a>
 										<a href="#" class="link-sports">스포츠</a>
 										<a href="#" class="link-ecomic">경제</a>
 									</div>
@@ -1038,7 +1094,7 @@
 								<a href="#" class="btn-next"></a>
 							</div>
 						</div>
-						<!-- 메인 왼쪽 2번째 박스 -->
+						<!-- 메인 왼쪽 2번째 박스 끝-->
 						<div class="box-body-left3">
 							<div class="box-title clearfix">
 								<div class="area-title">
@@ -1049,27 +1105,26 @@
 										<strong>678 </strong>개의 글
 									</span>
 									<a href="#" class="btn-set">관심주제 설정</a>
-								
 								</div>
 							</div>
-							<div class="box-in">
-								<div class="box-menu">
-									<div class="box-btn">
-										<a href="#" class="btn-prev"></a>
-										<a href="" class="btn-next"></a>
-									</div>
+							<div class="box-menu">
+								<div class="box-btn">
+									<a href="#" class="btn-prev"></a>
+									<a href="#" class="btn-next"></a>
+								</div>
+								<div class="box-in">
 									<ul class="list-menu">
 										<li class="item-menu">
-											<a href="#" class="btn-menu enter">엔터</a>
+											<a href="#" class="btn-menu enter" >엔터</a>
 										</li>
 										<li class="item-menu">
-											<a href="#" class="btn-menu sports">스포츠</a>
+											<a href="#" class="btn-menu sports" aria-selected="true">스포츠</a>
 										</li>
 										<li class="item-menu">
 											<a href="#" class="btn-menu car">자동차</a>
 										</li>
 										<li class="item-menu">
-											<a href="#" class="btn-menu webtoon">웹툰</a>
+											<a href="#" class="btn-menu webtton">웹툰</a>
 										</li>
 										<li class="item-menu">
 											<a href="#" class="btn-menu finance">경제</a>
@@ -1087,23 +1142,15 @@
 											<a href="#" class="btn-menu book">책방</a>
 										</li>
 										<li class="item-menu">
-											<a href="#" class="btn-menu beuty">패션뷰티</a>
+											<a href="#" class="btn-menu beauty">패션뷰티</a>
 										</li>
-						
+									</ul>
 								</div>
 							</div>
-
-							<div class="box-contents">
-
-							
-									
-							
-							</div>
-					
+							<div class="box-contents"></div>
 						</div>
-						<!-- 메인 왼쪽 3번째 박스-->
 					</div>
-					<!-- 메인 왼쪽 박스 끝 -->
+					<!-- 메인 왼쪽 박스 끝-->
 					<div class="box-body-right">
 						<div class="box-body-right1">
 							<div class="box-in-right1">
@@ -1157,7 +1204,7 @@
 								</div>
 							</div>
 						</div>
-						<!-- 메인 오른쪽 두번재 박스 끝-->
+						<!-- 메인 오른쪽 두번째 박스 끝-->
 						<div class="box-body-right3">
 							<iframe src="add2.html" frameborder="0" width="350" height="200"></iframe>
 							<span class="line line-top"></span>
@@ -1166,21 +1213,33 @@
 							<span class="line line-right"></span>
 							<span class="blind">광고</span>
 						</div>
+                        <!-- 메인 오른쪽 세번째 박스 끝-->
+                        <div class="box-body-right4">
+                            <div class="box-head">
+                                <div class="box-title">
+                                    <a href="#" class="link-trend-shopping img2-after img2-before">트렌드쇼핑</a>
+                                    <div class="box-btn">
+                                        <a href="#" class="btn-product">상품</a>
+                                        <a href="#" class="btn-shoppingmall">쇼핑몰</a>
+                                        <a href="#" class="btn-men" aria-selected="true">MEN</a>
+                                </div>
+                                
+                              
+                                    
+                                </div>
+                            <div class="box-contents">
+
+
+                            </div>
+                            </div>
+                            
+                        </div>
+                        <!-- 메인 오른쪽 네번째 박스 끝-->
 					</div>
 					<!-- 메인 오른쪽 박스 끝 -->
 				</div>
 			</div>
 		</div>
-
-    
-          
-            
-    
-
-          
-    
-    
-  
 		<footer class="container-footer">
 			
 		</footer>

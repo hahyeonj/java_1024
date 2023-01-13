@@ -18,6 +18,7 @@
 		.inner-container{ 
 			width: 1130px; margin: 0 auto; padding: 0 30px;
 		}
+
 		/* 검색 */
 		.box-search{
 			position: relative; height: 160px;
@@ -62,6 +63,7 @@
 		.box-search .link-happybean:hover .icon-happybean{
 			background-position: -380px -199px;
 		}
+
 		.box-search .box-search-area{
 			position: absolute; top: 50%; left: 238px;
 			margin-top: -28px;
@@ -107,6 +109,7 @@
 			position: absolute; top: 50%; left: 50%;
 			margin: -6px 0 0 -10px;
 		}
+
 		.box-search .icon-naver-logo{
 			width: 222px; height: 52px; display: inline-block;
 			vertical-align: top; background-position: 0 -158px;
@@ -118,6 +121,7 @@
 		.container-search{
 			border-bottom: 1px solid #e4e8eb;
 		}
+
 		/* 메뉴 */
 		.group-menu>*{
 			float: left;
@@ -194,6 +198,7 @@
 		.container-menu{
 			box-shadow: 0 1px 3px 0 rgba(0,0,0,0.12);
 		}
+
 		/* 메인 */
 		.container-body .inner-container{
 			padding: 20px 30px;
@@ -201,7 +206,7 @@
 		.box-body .box-body-left{
 			float: left; width: 750px;
 		}
-		.box-body .box-body-right{ 
+		.box-body .box-body-right{
 			float: right; width: 350px;
 		}
 		.box-body .box-body-left1{
@@ -274,6 +279,7 @@
 			background-position: -401px -245px;	vertical-align: top;
 			margin: 2px 5px 0 0;
 		}
+
 		/* 메인 왼쪽 2번째 컨텐츠 */
 		.box-body .box-body-left2{
 			margin-top: 12px;
@@ -448,6 +454,7 @@
 		.box-body-left2 .btn-next:hover{
 			background-position: 0 -296px;
 		}
+
 		/* 메인 오른쪽 두번째 컨텐츠 */
 		.box-body-right2{
 			position: relative; border: 1px solid #dae1e6; 
@@ -497,60 +504,58 @@
 		.box-body-right3{
 			height: 200px; overflow: hidden; position: relative;
 		}
-
 		/* 왼쪽 3번째 컨텐츠 */
 		.box-body-left3{
-			margin: 35px 0 27px; letter-spacing: -.25px;
+			margin: 35px 0 27px;
 		}
 		.box-body-left3 .box-title{
 			margin-bottom: 17px;
 		}
-	
 		.box-body-left3 .area-title{
-			float: left; 
+			float: left; letter-spacing: -.25px;
 		}
 		.box-body-left3 .area-info{
-			float: right; 
+			float: right; letter-spacing: -.25px;
 		}
 		.box-body-left3 .area-title .title{
 			font-size: 14px; color: #000;
 		}
-
 		.box-body-left3 .area-title .dsc{
-			margin-left: 8px;
+			color: gray; margin-left: 8px;
 		}
-		.box-body-left3 .area-info .area-info{
+		.box-body-left3 .area-info .info{
 			color: gray;
 		}
-			
 		.box-body-left3 .area-info .info strong{
 			color: #000;
 		}
 		.box-body-left3 .area-info .btn-set{
 			color: #505050; margin-left: 14px; position: relative;
 		}
+		.box-body-left3 .area-info .btn-set::before{
+			width: 11px; height: 11px; background-position: -358px -310px; 
+			margin-right: 4px; display: inline-block; vertical-align: -1px; content: '';
+			opacity: .7;
+		}
 		.box-body-left3 .area-info .btn-set:hover{
 			text-decoration: underline;
-		}		
-		.box-body-left3 .area-info .btn-set::before{
-			width: 11px; height: 11px; background-position: -358px -310px;
-			margin-right: 4px; display: inline-block; vertical-align: -1px;
-		    opacity: .7; content: '';
+		}
+		.box-body-left3 .area-info .btn-set:hover::before{
+			opacity: 1;
 		}
 		.box-body-left3 .area-info .btn-set::after{
-			width: 1px;  height: 12px; position: absolute; top: 2px; left: -8px;
+			width: 1px; height: 12px; position: absolute; top: 2; left: -8px;
 			content: ''; background-color: #e4e8eb;
 		}
 		.box-body-left3 .box-menu{
 			position: relative;
 		}
 		.box-body-left3 .box-menu::before{
-			position: absolute;  top: 0; right: 0; bottom: 0; left: 0;border: 1px solid #dae1e6;
+			position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 1px solid #dae1e6;
 			content: '';
-    
 		}
 		.box-body-left3 .box-menu .box-in{
-			overflow: hidden;			
+			overflow: hidden;
 		}
 		.box-body-left3 .box-menu .list-menu{
 			font-size: 0; line-height: 0; white-space: nowrap;
@@ -560,23 +565,23 @@
 			width: 94px; position: relative;
 		}
 		.box-body-left3 .box-menu .item-menu:nth-child(8n+1){
-			width: 92px
+			width: 92px;
 		}
 		.box-body-left3 .box-menu .btn-menu{
-			display: block; text-align: center;font-weight: bold;  font-size: 13px;
-    		border-right: 1px solid #dae1e6; color: #000;
-   			line-height: 49px;
+			display: block; text-align: center; font-weight: bold; font-size: 13px;
+			border-right: 1px solid #dae1e6; color: #202020; letter-spacing: -.25px;
 		}
 		.box-body-left3 .box-menu .icon-middot{
-			width: 2px; height: 2px; display: inline-block;  border-radius: 50%;
-    		background-color: rgba(32,32,32,.8); vertical-align: 4px; margin: 0 2px;  
+			width: 2px; height: 2px; display: inline-block; border-radius: 50%;
+			background-color: rgba(32,32,32,.8); vertical-align: 4px; margin: 0 2px;
 		}
+
 		.box-body-left3 .item-menu [aria-selected=true]{
 			position: relative; margin: 0 -1px; border-radius: 1px; 
 			box-shadow: 0 3px 6px 0 rgba(0,0,0,.16);
 			color: #fff !important;
 		}
-		ox-body-left3 .item-menu .enter:hover{ color: #e65da0;}
+		.box-body-left3 .item-menu .enter:hover{ color: #e65da0;}
 		.box-body-left3 .item-menu .sports:hover{ color: #0147b5;}
 		.box-body-left3 .item-menu .car:hover{ color: #4a94e1;}
 		.box-body-left3 .item-menu .webtton:hover{ color: #66c971;}
@@ -597,9 +602,172 @@
 		.box-body-left3 .item-menu .living[aria-selected=true]{ background-color: #c08d31;}
 		.box-body-left3 .item-menu .book[aria-selected=true]{ background-color: #42be6f;}
 		.box-body-left3 .item-menu .beauty[aria-selected=true]{ background-color: #8449ca;}
+		
+        /* 오른쪽 4번째 컨텐츠 */
+		.box-body-right4{
+			margin-top: 15px;
+		}
+		.box-body-right4 .box-title{
+			padding: 12px 0 13px; line-height: 17px;
+		}
+		.box-body-right4 .link-trand-shopping{
+			float: left; font-size: 13px; letter-spacing: -.25px; color: #000; font-weight: bold;
+			margin: 2px 0 0 1px;
+		}
+		.box-body-right4 .link-trand-shopping:hover{
+			text-decoration: underline;
+		}
+		.box-body-right4 .link-trand-shopping::before{
+			width: 15px; height: 15px; background-position: -109px -22px; 
+			margin-right: 4px; display: inline-block; vertical-align: -3px; content: '';
+		}
+		.box-body-right4 .link-trand-shopping::after{
+			width: 5px; height: 9px; background-position: -109px -49px; 
+			margin-left: 7px; display: inline-block; vertical-align: 0; content: '';
+		}
+		.box-body-right4 .box-title .box-btn{
+			float: right;
+		}
+		.box-body-right4 .box-title .box-btn>a{
+			float: left; font-size: 13px; color: #202020; font-weight: bold;
+			padding: 0 1px; border-bottom: 2px solid transparent; letter-spacing: -.25px;
+		}
+		.box-body-right4 .box-title .box-btn>a~a{
+			margin-left: 11px;
+		}
+		.box-body-right4 .box-title .box-btn [aria-selected=true]{
+			color: #03c75a; border-color: #19ce60;
+		}
+        .box-body-right4 .box-contents{
+            overflow: hidden; height: 1763px; border: 1px solid #e4e8eb;
+        }
+        .box-body-right4 .box-group-mall{
+            overflow: hidden;  padding: 12px 4px 11px 10px; background-color: #f7f9fa;
+            border-bottom: 1px solid #dae1e6;
+        }
+        .box-body-right4 .box-group-mall .link-mall{
+            letter-spacing: -.25px;  float: left; line-height: 23px; color: #404040;
+            font-size: 12px;
+        }
+        .box-body-right4 .box-group-mall .box-mall-area>a:hover{
+            text-decoration: underline;
+        }
+        .box-body-right4 .box-group-mall .icon-middot13{
+            float: left; background-color: #c9cccf;  
+            width: 3px; height: 3px; display: inline-block;
+            border-radius: 50%; vertical-align: top;     margin: 10px 13px 0;
+        }
+        .box-body-right4 .box-group-mall .icon-middot12{
+            float: left; background-color: #c9cccf;  
+            width: 3px; height: 3px; display: inline-block;
+            border-radius: 50%; vertical-align: top;     margin: 10px 12px 0;
+        }
+        .box-body-right4 .box-group-mall .icon-middot11{
+            float: left; background-color: #c9cccf;  
+            width: 3px; height: 3px; display: inline-block;
+            border-radius: 50%; vertical-align: top;  margin: 10px 11px 0;
+        }
+        .box-body-right4 .box-group-mall .icon-middot10{
+            float: left; background-color: #c9cccf;  
+            width: 3px; height: 3px; display: inline-block;
+            border-radius: 50%; vertical-align: top;  margin: 10px 10px 0;
+        }
+
+        .box-body-right4 .box-contents .box-shop-body{
+             padding: 0 8px;
+        }
+        .box-body-right4 .box-contents .box-shop-in1{
+            padding : 55px 0 20px; position: relative;
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .box-pagination{
+            position: absolute; top: 13px; right: 0; letter-spacing: -.25px;
+            line-height: 29px;
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .box-page{
+            color: gray;
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .box-page em{
+            color: #202020; font-weight: bold; font-style: normal; margin-right: 4px;
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .box-btn{
+            float: left; margin-left: 7px;
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .box-btn [class^=btn-]{
+            border: 1px solid #dae1e6 ; float: left; 
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .btn-prev::before{ 
+            width: 5px; height: 9px; content: ''; display: inline-block;  background-position: -116px -60px;
+            margin: 9px 12px 9px 10px; vertical-align: top; 
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .btn-next::before{
+            width: 5px; height: 9px; content: ''; display: inline-block;  background-position: -109px -60px;
+            margin: 9px 10px 9px 12px; vertical-align: top;
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .btn-next{
+            margin-left: -1px;
+        }
 
 
 
+
+        .box-body-right4 .box-contents .box-shop-in1 .list-goods{
+            margin-top: -21px; margin-right: -5px; overflow: hidden;
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .item-goods{
+            float: left; width: 33.33%; margin-top: 20px; letter-spacing: -.25px;
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .link-goods{
+            display: block; margin-right: 5px; 
+        }
+
+        .box-body-right4 .box-contents .box-shop-in1 .box-thumb{
+            overflow: hidden; position: relative;
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .box-thumb img{
+            vertical-align: top;
+            transition: transform .2s cubic-bezier(.165,.84,.44,1);
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .link-goods:hover img{
+            transform: scale(1.05)
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .box-dsc{
+            margin-top: 10px;
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .box-dsc .box-title{
+            overflow: hidden; text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    line-height: 19px;
+    text-align: center;
+    
+        }
+        .box-body-right4 .box-contents .box-shop-in1 .box-dsc .box-title:nth-child(1){
+            font-weight: bold;   line-height: 16px;
+        }
+        
+
+
+
+
+
+
+        .box-shop-body
+
+        .box-body-right4 .
+        .box-body-right4 .list-goods{
+             overflow: hidden;  margin-right: -5px;
+        }
+
+        .box-body-right4 .list-goods .item-goods{
+            display: block; margin-right: 5px;
+        }
+        .box-body-right4 .list-goods .item-goods img{
+
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: .08;
+            border: 1px solid #000;  vertical-align: top;
+        }
+
+		
 		/* 공통 */
 		.clearfix::after{
 			clear: both; display: block; content: '';
@@ -608,6 +776,7 @@
 			position: absolute;
 			width: 1px; height: 1px;margin: -1px; overflow: hidden;
 		}
+
 		.img1::after, .icon-jrnaver.img1, .icon-happybean.img1,
 		.icon-search.img1,.icon-auto-complete.img1,
 		.icon-kbd.img1, .icon-naver-logo.img1, .icon-mail.img1,
@@ -625,11 +794,16 @@
 		.box-body-left2 .btn-next,
 		.box-body-right2 .box-btn .btn-prev .icon-prev,
 		.box-body-right2 .box-btn .btn-next .icon-next,
+
 		.box-body-left3 .area-info .btn-set::before{
 			background-image: url(img/img1.png);
 			background-size: 442px 428px;
 		}
 		
+		.img2-after::after, .img2-before::before, .img2{
+			background-image: url(img/img2.png);
+			background-size: 129px 101px;
+		}
 	</style>
 </head>
 <body>
@@ -759,7 +933,7 @@
 							<span class="line line-left"></span>
 							<span class="line line-right"></span>
 						</div>
-						<!-- 메인 왼쪽 첫번째 박스 -->
+						<!-- 메인 왼쪽 첫번째 박스 끝-->
 						<div class="box-body-left2">
 							<div class="box-head">
 								<div class="box-in clearfix">
@@ -1038,7 +1212,7 @@
 								<a href="#" class="btn-next"></a>
 							</div>
 						</div>
-						<!-- 메인 왼쪽 2번째 박스 -->
+						<!-- 메인 왼쪽 2번째 박스 끝-->
 						<div class="box-body-left3">
 							<div class="box-title clearfix">
 								<div class="area-title">
@@ -1049,27 +1223,26 @@
 										<strong>678 </strong>개의 글
 									</span>
 									<a href="#" class="btn-set">관심주제 설정</a>
-								
 								</div>
 							</div>
-							<div class="box-in">
-								<div class="box-menu">
-									<div class="box-btn">
-										<a href="#" class="btn-prev"></a>
-										<a href="" class="btn-next"></a>
-									</div>
+							<div class="box-menu">
+								<div class="box-btn">
+									<a href="#" class="btn-prev"></a>
+									<a href="#" class="btn-next"></a>
+								</div>
+								<div class="box-in">
 									<ul class="list-menu">
 										<li class="item-menu">
-											<a href="#" class="btn-menu enter">엔터</a>
+											<a href="#" class="btn-menu enter" >엔터</a>
 										</li>
 										<li class="item-menu">
-											<a href="#" class="btn-menu sports">스포츠</a>
+											<a href="#" class="btn-menu sports" aria-selected="true">스포츠</a>
 										</li>
 										<li class="item-menu">
 											<a href="#" class="btn-menu car">자동차</a>
 										</li>
 										<li class="item-menu">
-											<a href="#" class="btn-menu webtoon">웹툰</a>
+											<a href="#" class="btn-menu webtton">웹툰</a>
 										</li>
 										<li class="item-menu">
 											<a href="#" class="btn-menu finance">경제</a>
@@ -1087,23 +1260,15 @@
 											<a href="#" class="btn-menu book">책방</a>
 										</li>
 										<li class="item-menu">
-											<a href="#" class="btn-menu beuty">패션뷰티</a>
+											<a href="#" class="btn-menu beauty">패션뷰티</a>
 										</li>
-						
+									</ul>
 								</div>
 							</div>
-
-							<div class="box-contents">
-
-							
-									
-							
-							</div>
-					
+							<div class="box-contents"></div>
 						</div>
-						<!-- 메인 왼쪽 3번째 박스-->
 					</div>
-					<!-- 메인 왼쪽 박스 끝 -->
+					<!-- 메인 왼쪽 박스 끝-->
 					<div class="box-body-right">
 						<div class="box-body-right1">
 							<div class="box-in-right1">
@@ -1166,21 +1331,97 @@
 							<span class="line line-right"></span>
 							<span class="blind">광고</span>
 						</div>
+						<!-- 메인 오른쪽 세번째 박스 끝-->
+						<div class="box-body-right4">
+							<div class="box-title clearfix">
+								<a href="#" class="link-trand-shopping img2-after img2-before">트랜드쇼핑</a>
+								<div class="box-btn">
+									<a href="#" class="btn-product">상품</a>
+									<a href="#" class="btn-shoppingmall">쇼핑몰</a>
+									<a href="#" class="btn-men" aria-selected="true">MEN</a>
+								</div>
+							</div>
+
+
+							<div class="box-contents">
+                                <div class="box-group-mall clearfix">
+                                    <div class="box-mall-area">
+                                        <a href="#" class="link-mall coupang"><strong>쿠팡</strong></a>
+                                        <i class="icon-middot13"></i>
+                                        <a href="#" class="link-mall gmarket">G마켓</a>
+                                        <i class="icon-middot13"></i>
+                                        <a href="#" class="link-mall auction">옥션</a>
+                                        <i class="icon-middot12"></i>
+                                        <a href="#" class="link-mall 11st">11번가</a>
+                                        <i class="icon-middot13"></i>
+                                        <a href="#" class="link-mall ssg.com">SSG닷컴</a>
+                                        <i class="icon-middot12"></i>
+                                        <a href="#" class="link-mall tmon"><strong>티몬</strong></a>
+                                    </div>
+                                    <div class="box-mall-area">
+                                        <a href="#" class="link-mall oliveyoung">올리브영</a>
+                                        <i class="icon-middot11"></i>
+                                        <a href="#" class="link-mall wemakeprice"><strong>위메프</strong></a>
+                                        <i class="icon-middot11"></i>
+                                        <a href="#" class="link-mall gsshop">GS샵</a>
+                                        <i class="icon-middot10"></i>
+                                        <a href="#" class="link-mall cj-onstyle"><strong>CJ온스타일</strong></a>
+                                        <i class="icon-middot11"></i>
+                                        <a href="#" class="link-mall fassion-plus">패션플러스</a>
+                                    </div>
+                                </div>
+                                <div class="box-shop-body">
+                                    <div class="box-shop-in1">
+                                        <div class="box-pagination clearfix">
+                                            <div class="box-page"><em>1</em>/ 6</div>
+                                            <div class="box-btn">
+                                                <a href="#" class="btn-prev img2-before"></a>
+                                                <a href="#" class="btn-next img2-before"></a>
+                                            </div>
+                                        </div>
+                                        <ul class="list-goods clearfix">
+                                            <li class="item-goods">
+                                                <a href="#" class="link-goods">
+                                                    <div class="box-thumb">
+                                                        <img src="https://s.pstatic.net/shopping.phinf/20230104_25/da80d1b6-725b-4555-ba79-f5ab82017b77.jpg" width="107" height="146" alt="상품1" class="men_giftlst_m">
+                                                        <span class="box-border"></span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="box-shop-pagination clearfix">
+                                            <a href="#" class="btn-prev img2-before"></a>
+                                            <div class="box-page"><em>1</em>/ 6</div>
+                                            <a href="#" class="btn-next img2-before"></a>
+                                        </div>
+                                    </div>
+                                    <div class="box-shop-in2"></div>
+                                    <div class="box-shop-in3"></div>
+                                    <div class="box-shop-in4"></div>
+
+
+
+
+                                                    
+                                                    <div class="box-goods-title">
+                                                        <span class="goods-title-main"></span>
+                                                        <span class="goods-title-sub"></span>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+						</div>
+						<!-- 메인 오른쪽 네번재 박스 끝-->
 					</div>
-					<!-- 메인 오른쪽 박스 끝 -->
+					<!-- 메인 오른족 박스 끝 -->
 				</div>
 			</div>
 		</div>
-
-    
-          
-            
-    
-
-          
-    
-    
-  
 		<footer class="container-footer">
 			
 		</footer>
