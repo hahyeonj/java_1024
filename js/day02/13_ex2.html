@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습예제2</title>
+</head>
+<body>
+    <script>
+        /*
+        
+        */
+        
+        /*
+        function user(id, pw){
+            this.id = id;
+            this.pw = pw;
+            this.print = function(){
+                console.log(`id : ${id}, pw : ${pw}`);
+            }
+        }
+        
+        let user1 = new user(prompt('id :'),prompt('pw : '));
+        
+       
+        console.log(user1)
+        */
+
+
+
+
+        function user(id, pw){
+            this.id = id;
+            this.pw = pw;
+            this.print = function(){
+                console.log(`ID : ${this.id}, PW : ${this.pw}`);
+            }
+        }       
+       let id = prompt('아이디를 입력하세요');
+       let pw = prompt('비번을 입력하세요');
+       let user = new User(id, pw);
+       user.print();
+       
+       let user2= {
+        id, pw,
+        ptint(){
+            console.log(`ID : ${this.id}, PW : ${this.pw}`);
+            user2.print();
+        }
+       }
+        
+    </script>
+</body>
+</html>

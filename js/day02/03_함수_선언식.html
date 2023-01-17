@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 예제</title>
+</head>
+<body>
+    <script>
+        /*
+
+        */
+       /* -선언된 함수는 어디ㅔ엇 호출하든 상관없이 호출됨(ex.밑에서 선언된 함수라도 위에서 해도 됨) 
+            ㄴ 호이스팅되기 때문에 (함수가 선언된면 제일 위로 가는것으로 만드는것)
+       */
+        showMyName();//(왜 안되지;;;)
+       function sayHello(){
+            console.log('Hello');
+       }
+       sayHello();
+        /* */
+        function sum1(num1, num2) {
+            console.log(num1 + num2);
+        }
+        /* */
+        function sum2(a, b) {
+            return a + b;
+        }
+        sum1(1, 2);
+        console.log(sum2(1,2));
+        let res = sum2(1, 2);
+        console.log(res);
+
+        /*비추*/
+        let name = '홍길동';
+        function showName(){
+            console.log(name);
+        };
+        showName();
+
+        sum1(1,2,3);
+        sum1(1);
+
+        function showMyName(firstName='길동', lastName='홍'){
+            console.log(`${lastName} ${firstName}`);
+        }
+        showMyName('꺽정', '임');
+        showMyName('꺽정');
+        showMyName('꺽정', undefined);
+        showMyName();
+
+        </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let book = {
+            title : '이것은 자바다',
+             author : '홍길동',
+            print : function(){
+                console.log(`제목 : ${this.title}, 저자 : ${this.author} `)
+            }
+        };
+
+        //상단의 print :funttion을 축약해서 하단으로 표기 가능
+        book = {
+            title : '이것은 자바다',
+            author : '홍길동',
+            print(){
+                console.log(`제목 : ${this.title}, 저자 : ${this.author} `)
+            }
+        };
+    </script>
+</body>
+</html>

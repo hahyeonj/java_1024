@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자 함수</title>
+</head>
+<body>
+    <script>
+
+        /*
+        function book(title, author){
+            this.title = title;
+            this.author = author;
+        }
+        */
+
+        function book(title, author){
+            //this에 속성 추가
+            this.title = title;
+            this.author = author;
+            this.print = function(){
+                console.log(`제목 : ${this.title}, PW : ${this.author}`);
+            }
+             //this를 반환
+        }
+
+        let book1 =  new book('이것이 자바다', '홍길동');
+        let book2 =  new book('자바의 정석', '남궁성');
+        book1.print();
+        book2.print();
+
+
+    </script>
+</body>
+</html>

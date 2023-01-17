@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>옵셔널 체이닝 예제</title>
+</head>
+<body>
+    <script>
+    /* */
+    let user = {
+        id : '123',
+        pw : '345',
+        authority : {
+            name : 'admin',
+            value : 10
+        }
+    }
+    user.authority.name = 'user';
+    user.authority.value = 9;
+    user.authority.code= 7;
+    /*
+    
+    */
+    //user.name.firstName = '홍';//오류남 
+
+    //user?.name.firstName = '홍';
+    
+    console.log(user.name?.firstName);//에러가 나는 속성을 막아줌. //undefined로 나옴
+    //안전하게 접속할수 있도록 해당속성이 없으면 작동되지 않게 함
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        /* 호이스팅 : 
+
+        */
+        /* 실행전 위로 끌어올리는 작업
+          x = 10;
+        var x;
+        console.log(x);
+        
+        */
+
+        x = 10;
+        var x;
+        console.log(x);
+        
+
+        /* 아래 코드(let)는 호이스팅이 일어나지 않아 에러발생
+        */
+        //y = 20;
+        let y;
+        console.log(y);
+        
+        /*  */
+        test1();
+        function test1(){  console.log('Hi'); }
+        
+        
+        /*
+        var test2
+        test2();
+        test2 = function(){
+            console.log('Hello')
+        }
+        */
+
+
+        t est2();
+        var test2 = function(){
+            console.log('Hello')
+        }
+
+
+    </script>
+</body>
+</html>

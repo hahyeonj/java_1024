@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 예제</title>
+</head>
+<body>
+    <script>
+        /*
+        - 
+        let 객체명 = {
+            속성명1 : 값1, 
+            속성명2 : 값2,
+            ...,
+            속성명n : 값n
+        };
+        -
+        
+        -
+
+        -
+
+        */
+        let user = {
+            id : 'abc',
+            pw : 'qwe',
+            printHello : function(){
+                console.log('Hello')
+            }
+        }
+        console.log(user.id);
+        console.log(user['pw']);
+        user.authority = 'user';
+        console.log(user);
+        user.printHello();
+        delete user.printHello;
+        console.log(user);
+       console.log(`'id' in user : ${'id' in user}`);
+        console.log(`'printHello' in user : ${'printHello' in user}`);
+        /*
+
+        */
+       
+       for(property in user){
+        console.log(`user.${property} = ${user[property]}`);
+       }
+
+       for(value in user){
+        console.log(value);
+       }
+       //하단 에러 발생
+       /*
+       for(value of user){
+        console.log(value);
+       }
+        */
+
+
+
+
+       const book = {
+            name : '이것은 자바다',
+            price : 10000
+       };
+       book.price = 20000;
+       console.log(book);
+       //아래 코드는 에러 발생
+       /*
+       book = {
+            name : '이것은 자바다',
+            price : 10000
+       };
+       */
+        /*
+        
+        
+        */
+        let os = 'android';
+        let phone = {
+        [os] : 'version 1.1'
+        };
+        let os2 = 'ios';
+        phone[os2] = 'version 2.1'
+        console.log(phone);
+        
+        let id = 'abc', pw = 'abc123';
+        /* 
+        //단축 프로퍼티, 속성 : 값에서 값이 변수명이고, 
+        //
+        let user2 = {
+            id : id,
+            pw : pw
+        }
+        */
+        let user2 = {
+            id,
+            pw
+        }
+
+        console.log(user2);
+    </script>
+</body>
+</html>

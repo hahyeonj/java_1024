@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 표현식 예제</title>
+</head>
+<body>
+     <script>
+        /*
+            함수 표현식보다는 함수 선언식을 추천->함수 선언식은 어디서 정의하든 어디서든 호출가능 
+            함수표현식은 함수 선언식과는 달리 ;를 붙임(에러가 나진 않음)
+        */
+        
+        let sayHello = function(){
+            console.log('Hello');
+        };
+        sayHello();
+
+        function sayName{
+            console.log('홍길동');
+        }
+        let sayName2 = sayName;
+        sayName2();
+     </script>
+</body>
+</html>
