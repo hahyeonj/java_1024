@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호출 스케줄링</title>
+</head>
+<body>
+    <script>
+    /*
+    
+    
+    */
+
+        //1000ms 후에 함수를 실행
+        /*
+        setTimeout(function(name){
+            alert(`안녕하세요. 제 이름은 ${name}입니다.`);
+        },1000,'홍길동');
+        */
+
+        //
+        let timerID = setTimeout(function(name){
+            alert(`안녕하세요. 제 이름은 ${name}입니다.`);
+        },1000,'홍길동');
+        clearTimeout(timerID);
+
+
+        /*
+        
+        
+        */
+        //setInterval(()=>console.log(1), 1000);
+
+        /*
+        let count = 0;
+        let IntervalId = setInterval(()=>{
+            document.body.innerText = ++count;
+        }, 100);
+        */
+        //setInterval(()=>console.log(1), 1000);
+       
+       /*
+       
+        let date = new Date(Date.parse('2023-01-18T21:14:00.000+09:00'));
+        function getDate(date){
+            let hour= date.getHours();
+            let minute = date.getMinutes();
+            let ms = date.getMilliseconds();
+            alert(`${hour}:${minute}:${ms}`);
+        }
+        
+        let clock = setInterval(()=>{
+            alert(``);
+            ms = ms+1;
+        },1000,date);
+
+        */
+
+        let s, m, h;
+        s = m = h = 0;
+        intervalID = setInterval(()=>{
+            s++;
+            if(s == 60){
+                s = 0;
+                m++;
+            }
+            if(m == 60){
+                m = 0;
+                h++;
+            }
+            h = h >= 24? 0 : h;
+
+            document.body.innerText = getString(h, m. s);   
+        },1000  );
+        function getString(h, m, s){
+            return `${zerofill(h)}:${zerofill(m)}:${zerofill(s)}`;
+        }
+        function zerofill(num){
+            return num < 10? '0'+num : num;
+        }
+
+
+    
+
+
+        /*
+        */
+
+
+    </script>
+</body>
+</html>

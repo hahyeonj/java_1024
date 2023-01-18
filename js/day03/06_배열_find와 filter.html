@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 find와 filter 예제</title>
+</head>
+<body>
+    <script>
+        /*
+        
+        
+        */
+
+        let arr = [
+            {title:'이것이 자바다', author : '홍길동'},
+            {title:'자바의 정석', author : '남궁성'},
+            {title:'자바의 정석2', author : '남궁성'}
+        ];
+        let book = arr.find(function(item){
+            return item.author == '남궁성';
+        });
+        let bookIndex= arr.findIndex(item=>item.author == '남궁성');
+        console.log(book);
+        console.log(bookIndex);
+
+        let books = arr.filter(item=>item.author == '남궁성');
+        console.log(books);
+    </script>
+</body>
+</html>
