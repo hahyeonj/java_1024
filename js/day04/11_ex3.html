@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .bg-yellow{
+            background-color: yellow; color:red;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li onclick="changeStyle(1)">1</li>
+        <li onclick="changeStyle(2)">2</li>
+        <li onclick="changeStyle(3)">3</li>
+    </ul>
+    <script>
+        letdocument.querySelector.onclick('changeStyle(1)');
+        let change2 = document.querySelector('changeStyle(2)');
+        let change3 = document.querySelector('changeStyle(3)');
+
+        function changeStyle(index){
+            let change2 = document.querySelector(`li:nth-child(${index})`);
+            el.classList.toggle('bg-yellow')
+        }
+
+    </script>
+   
+</body>
+</html>

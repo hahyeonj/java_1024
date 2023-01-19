@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 참색</title>
+</head>
+<body>
+    <div id="box1" class="box box11">안녕하세요.</div>
+    <div id="box2" class="box box22">홍길동입니다.</div>
+    <ul>
+        <li>
+            
+        </li>
+
+    </ul>
+    
+    <script>
+        /*
+        아이디가 있는 요소들은 아이디명으로 접근할 수 있지만 비추천
+        ㄴ 절대적인것이 아니라 바꾸는게 가능하기 때문에
+        */
+        let box = document.getElementById('box1');
+        console.log(box);
+        console.log(box2);
+        console.log(box1);
+        //
+        box2 = 2;
+        console.log(box2);
+
+        /*
+        document.querySelectorAll('선택자')
+
+         NodeList로 반환
+        document.querySelector('선택자')
+        */
+        console.log('=========');
+        let boxes = document.querySelectorAll('.box');
+        for(tmp of boxes){
+           console.log(tmp);
+        }
+        console.log('=========');
+        box = document.querySelector('.box');
+        console.log(box);
+
+
+        /*
+        element.matches('선택자')
+        - 요소가 선택자와 일치하는지를 알려줌
+        - true/false를 리턴
+        */
+        console.log('=========');
+        console.log(`box.matches('.box11') : ${box.matches('.box11')}`);
+        console.log(`box.matches('.box22') : ${box.matches('.box22')}`);
+
+
+        /*
+        element.closest(선택자)
+        - 
+        */
+        console.log('=========');
+        let start = dacument.querySelector('#start');
+        let list = start.closest('.list');
+        console.log(list);
+        
+        
+        /*
+WWWW
+        */
+
+     
+
+        let boxes1 = document.getElementsByClassName('.box');
+        console.log(`getElementsBy* :${boxes1.length}`);
+        let boxes2 = document.getquerySelectorAll('.box');
+        console.log(`querySelector* :${boxes2.length}`);
+    </script>
+
+    <script>
+        console.log(`getElementsBy* :${boxes1.length}`);
+        console.log(`querySelector* :${boxes2.length}`);
+    </script>
+</body>
+</html>

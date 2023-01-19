@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 탐색</title>
+    <script>
+        
+        //onload는 화면구성이 완료되면 호출됨.
+
+        window.onload=function(){
+             //해당 코드는 출력
+            let htmlTag = document.documentElement;
+            console.log(htmlTag.innerHTML);
+            //body는 전체 요소중 body를 지나지 않아서 나오지 않는다.
+            let bodyTag = document.body;
+            console.log(bodyTag);
+            //head는 지나는 중이라 나옴.
+            let headTag = document.head;
+            console.log(headTag);
+            
+            console.log('==============================');
+            
+            /*
+            
+            */
+            
+            let bodyChildNodes = bodyTag.childNodes;
+            for(let childNode of bodyChildNodes){
+                console.log(childNode);
+            }
+            console.log('==============================');
+            console.log(bodyTag.firstChild);
+            console.log('==============================');
+            console.log(bodyTag.lastChild);
+            console.log('==============================');
+            /* 
+            요소 : 태크로 된 요소들, 텍스트 노드 제외
+            요소 탐색
+            */
+            let bodyChildElements = bodyTag.children;
+            for(let element of bodyChildElements){
+                console.log(element);
+            }
+            console.log('==============================');
+            console.log(bodyTag.firstElementChild);
+            console.log('==============================');
+            console.log(bodyTag.lastElementChild);
+            /*
+            
+            */
+        }
+
+        /*    
+        //해당 코드는 출력
+        let htmlTag = document.documentElement;
+        console.log(htmlTag.innerHTML);
+        //body는 전체 요소중 body를 지나지 않아서 나오지 않는다.
+        let bodyTag = document.body;
+        console.log(bodyTag);
+        //head는 지나는 중이라 나옴.
+        let headTag = document.head;
+        console.log(headTag);
+        */
+
+    </script>
+</head>
+<body>
+    <div>안녕하세요.</div>
+
+    <a href="#">링크</a>
+    <ul>
+        <li>사과</li>
+        <li>포도</li>
+    </ul>
+
+
+</body>
+</html>

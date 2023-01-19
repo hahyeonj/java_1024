@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 탐색 예제</title>
+</head>
+<body>
+    <table border="1">
+        <caption>표</caption>
+        <thead>
+            <tr>
+                <th>과목</th>
+                <th>이름</th>
+                <th>성적</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HTML</td>
+                <td>홍길동</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">평균</td>
+                <td>100</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        //let tbody = table.tBodies[0];
+        //console.log(table);
+        let table = document.body.firstElementChild;
+        let rows = table.rows;
+        console.log('=== rows ===')
+       // console.log(tbody);
+        for(row of rows){
+            //
+            console.log(row.sectionRowIndex);
+            //
+            console.log(row.rowIndex);
+            console.log(row);
+        }
+        let caption = table.caption;
+        console.log('=== caption ===')
+        console.log(caption);
+        let thead = table.thead;
+        console.log('=== thead ===')
+        console.log(thead);
+        let tfoot = table.tfoot;
+        console.log('=== tfoot ===')
+        console.log(tfoot);
+        let tbodies = table.tBodies;
+        console.log(tbodies[0]);
+        let tds = rows[0].cells;
+        for(td of tds){
+            console.log(td.cellIndex);
+            console.log(td);
+        }
+
+    </script>
+</body>
+</html>

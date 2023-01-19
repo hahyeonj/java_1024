@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>합 예제</title>
+</head>
+<body>
+
+    <input type="text" name="num1">
+    +
+    <input type="text" name="num2">
+    =
+    <input type="text" name="res" readonly>
+    <br>
+    <button onclick="sum()">계산</button>
+    
+
+
+
+    <script>
+        //
+        /**/
+        function sum(){
+            //
+            
+            let num1 = document.getElementsByName('num1')[0].value; 
+            num1 = document.body.firstElementChild.value;
+            num1 = document.querySelector('[name=num1]').value; 
+            //querySelector는 querySelectorAll과 달리 최대 1개를 
+            num1 = document.querySelectorAll('[name=num1]')[0].value;
+
+            //일부러 복잡하게 함. 앞요소의 다음것으로 설정 가능
+            let num2 = document.body.firstElementChild.nextElementSibling.value;
+            
+            let res = +num1 + +num2;
+            console.log(res);    
+        }
+        
+        
+
+
+    </script>
+</body>
+</html>
