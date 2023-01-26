@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두 수 합 예제</title>
+</head>
+<body>
+    <input type="text" name="num1">
+    +
+    <input type="text" name="num2">
+    =
+    <input type="text" readonly id="res">
+    <button onclick="sum();">계산</button>
+
+
+    <script>
+        function sum(){
+            let num1 = document.querySelector('[name=num1]')
+            if(num1)
+                num1 = num1.value;
+            num1 = +num1;
+            let num2 = document.querySelector('[name=num1]')
+            if(num2)
+                num2 = num2.value;
+            num2 = +num2;
+            //alert(typeof num2)//string number 확인
+            let res = document.querySelector('#res');
+            if(isNaN(num1) || isNaN(num2)){
+                alert('숫자를 입력하세요.');
+                return;
+            }
+            
+            res.value = num1 + num2;
+            num1 + num2;
+            
+        }
+
+    //input창에 입력하면 숫자로 입력하더라도 문자열로 인식함.
+     
+    </script>
+</body>
+</html>

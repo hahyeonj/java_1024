@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 객체 예제</title>
+</head>
+<body>
+    <button id="btn1">
+        <a href="#">클릭</a>
+    </button>
+    <!--
+        preventDefault는 a태그가
+    -->
+    <a href="http://naver.com" id="naver" onclick="event.preventDefault()">네이버로</a>
+    <script>
+        let btn1 = document.querySelector('#btn1');
+        btn1.onclick = (event)=>{
+           
+        //클릭 위치 offsetX,Y
+
+        /*
+            type : 이벤트 타입
+            target : 이벤트가 처음 발생한 요소
+            
+        */
+        console.log(event);
+        }
+
+
+    </script>
+</body>
+</html>

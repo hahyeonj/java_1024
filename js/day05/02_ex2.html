@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 탐색</title>
+</head>
+<body>
+    <div id="first">1</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    안녕하세요.
+    <script>
+        /*
+        node :텍스트 노드 + 요소
+        요소 element : 태그로 이루어진것
+        자식 탐색
+            -노드
+                elem.childNodes :요소의 모든 자식 노드
+                elem.firstChild : 첫번째 자식 노드
+                elem.lastChild : 마지막 자식 노드
+            -요소(노드 보단 요소가 많이 쓰임)
+                elem.children :모든 자식 요소
+                elem.firstElementChild  첫번째 자식 요소
+                elem.lastElementChild 마지막 자식 요소
+        */
+        //document.body//바디태그를 선택하는 것
+        document.body.childNodes.forEach(item=>console.log(item.textContent));
+        console.log('---------------------------');
+        console.log(document.body.firstChild.textContent);
+        console.log('---------------------------');
+        console.log(document.body.lastChild.textContent);
+        console.log('---------------------------');
+        let children = document.body.children;
+        for(item of children)
+            console.log(item);
+
+        /*
+        형제 요소 탐색
+        elem.nextElementSibling 다음 형제 요소 선택
+        elem.previousElementSibling 
+        부모 요소 탐색
+        elem.parentElement:부모 요소를 선택
+        */
+        let li = document.querySelector('li:nth-child(2)');
+        console.log(li.parentElement);
+        console.log(li.nextElementSibling);
+        console.log(li.previousElementSibling);
+        
+        /*
+        원하는 요소 탐색
+        1.css 선택자를 이용한 요소 탐색()
+            같은 메소드 이용
+            정적
+            elem.querySelector('선택자'): elem 안의 요소들 중 선택자와 일치하는 첫번째 요소 선택
+            elem.querySelectorAll('선택자'):elem 안의 요소들 중 선택자와 일치하는 모든 요소 선택('반복문 사용 필요')
+                
+            선택자 예시
+                #id
+                .className
+                div
+                li:first-child
+                div > ul
+        2.태그/클래스/아이디/name속성을 이용한 요소 탐색
+            -태그/클래스/아이디/name속성에 따라 다른 메소드 이용
+            -동적
+            -elem.getElementById('아이디명') : 요소 안에 있는 요소 중 아이디가 아이디명과 일치하는 요소 선택
+                ㄴid는 1개만 존재하므로 복수형 안붙고 반복문 사용안함
+
+                밑에는 s 붙고, 반복문 사용 필요
+            -elem.getElementsByTagName('태그명') :
+            -elem.getElementsByClassName('클래스명') :
+            -elem.getElementsByName('name명') :
+        */
+        let list1 = document.querySelectorAll('li');
+        list1.forEach((item, index, arr)=>{
+        console.log(`arr[${index}] : ${item.textContent}`);
+        console.log(`arr[${index}] : ${arr[index].textContent}`);
+        });
+        let list2 = document.getElementsByTagName('li');
+        for(item of list2){
+            console.log(item.textContent);
+
+        }
+    </script>
+</body>
+</html>
