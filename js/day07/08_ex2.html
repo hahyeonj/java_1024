@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="../js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="box" style="height: 50px; border: 1px solid black; line-height: 50px;"></div>
+    <label>
+        <input type="checkbox" name="fruit" value="사과">사과
+    </label>
+    <label>
+        <input type="checkbox" name="fruit" value="바나나">바나나
+    </label>
+    <label>
+        <input type="checkbox" name="fruit" value="오렌지"">오렌지
+    </label>
+    <br>
+    <button id="btn">클릭</button>
+
+    <script>
+        
+        let list = $('[name=fruit]');
+/*
+        //다찍어냄 콘솔
+        for(let i = 0;i<list.length; i++)
+            console.log(list.eq(i).val());
+
+        list.each(function(){
+            console.log($(this).val());
+            
+        })
+
+        //체크된것만! 콘솔
+
+        $('#btn').click(()=>{
+            $('[name=fruit]').each(function(){
+                if($(this).prop('checked')){
+                    consol.log($(this).val());
+                }
+            });
+        });
+
+        //위에 간단하게 콘솔
+
+
+        $('[name=fruit]:checked').each(function(){
+           
+        });
+
+*/
+        //새로운 박스에 찍어냄
+
+        $('#btn').click(()=>{
+  
+            let arr = [];
+            
+                $('[name=fruit]:checked').each(function(index){
+                    arr.push($(this).val());
+                });
+            
+            let str= arr.join(',');
+            $('.box').text(str);
+
+        });
+/*
+        for(let i = 0;i<list.length; i++)
+            console.log(list.eq(i).porp('checked'));
+
+
+        list.each(function(){
+            console.log($(this).val());
+            
+        })
+        
+        */
+
+
+/*
+        
+        for(let i = 0;i<list.length; i++)
+            console.log(list.eq(i).val());
+
+        list.each(function(){
+            console.log($(this).val());
+        })
+*/
+
+/*        내가 한것. 근데 이거 id는 #이다. .아님
+        $('#btn').click(function(){
+            list.each(function(){
+                let res=$(this).prop('checked','true');
+                if(res==true)
+                     alert($(this).val());
+           
+        });
+        });
+
+*/        
+        
+        //$('.btn').click(()=>alert($(check).prop('checked',false)));
+
+
+
+        //$('#input2').prop('checked', false);
+        //$('.btn3').click(()=>alert($('#input1').val()));
+        /*
+        $('.item-menu').click(function(){
+            $(this).children('.list-sub').stop.slideToggle(1000);
+        });
+        */
+    </script>
+</body>
+</html>
