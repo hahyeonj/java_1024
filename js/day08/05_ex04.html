@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        .box{
+            height: 50px; line-height: 50px; border: 1px solid black;
+            width: 200px; text-align: center;
+        }
+
+        
+
+    </style>
+
+</head>
+<body>
+    <!--
+        prop() : 표준 속성인 경우 사용하는 것을 추천
+        attr(): 비표준 속성인 경우 사용하는 것을 추천
+    -->
+    <div class="box"></div>
+    <label><!--글자를 클릭해도 체크박스에 표시되게 하기 위해 -->
+        <input type="checkbox" name="fruit" value="바나나">바나나
+    </label>
+    <input type="text" class="textbox">
+
+    <script>
+
+        $('[name=fruit]').click(function(){
+            let text = '';
+
+            //체크박스 체크되면
+            if($(this).prop('checked'))
+                text = $(this).val();
+
+            $('.box').text(text);
+        });
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클릭예제</title>
+    <script src="../js/jquery.min.js"></script>
+</head>
+<body>
+    
+    <!-- 버튼을 배치하고, 버튼을 클릭했을 때 alert('Hello')가 뜨도록 코드를 작성-->
+    <button class="btn">클릭합니다.</button>
+    
+    <script>
+        /*
+        $('.btn').click(()=>alert('Hello'));
+        //요소 선택 //.click        
+        $('.btn').click(()=>{
+            alert('Hello');
+        });
+        */
+       /*
+       text()
+       html() :요소안의 html 코드를 가져옴.
+       val() 요소안의 value를 가져옴. input select textarea태그만 가능
+       
+       */
+       
+        $('.btn').click(function(){
+            let text = $(this).text();
+            alert(text);
+        });
+        $('.btn').click(()=>alert($('.btn').text()));
+
+
+
+    </script>
+</body>
+</html>
