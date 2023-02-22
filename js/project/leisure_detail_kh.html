@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>leisure_detail</title>
+ <script src="/js/jquery.min.js"></script>
+ <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Noto Sans KR", sans-serif;
+    background: white;
+  }
+
+ a:link {
+   color: #333;
+   text-decoration: none;
+ }
+
+ a:visited,
+ a:hover,
+ a:active {
+   color: #333;
+ }
+
+ .nav-search-container{
+     position: relative;
+     width: 200px;
+     height: 50px;
+ }
+.nav-search-input{
+  border-radius: 10px;
+  width: 100%;
+  height: 30px;
+  font-size: 15px;
+  border: 2px solid black;
+  outline: 0;
+  line-height: 30px;
+}
+.nav-search .search-btn{
+    position: absolute; width: 20px; height: 20px; background: none;
+    color: rgb(255, 255, 255); border: 0; cursor: pointer;
+    top: 15px; bottom: 0px; right:20px;
+}
+.nav-search img{
+  width: 20px; height: 20px;
+  margin-bottom: 0px;
+  margin-left: 15px;
+}
+/*찾기 이미지*/
+/* header input {
+  width: 40px;
+  position: absolute;
+  top: 25px;
+  right: 0;
+  z-index: 10;
+  opacity: 0.5;
+}
+
+header img:hover {
+  opacity: 1;
+} */
+
+#dm_ul {
+  min-width: 300px;
+  position: absolute;
+  right: 100px;
+  top: 20px;
+}
+
+.dropmenu ul ul {
+  position: absolute;
+  display: none;
+  z-index: 3; /*아래의 이미지 보다 위로 올리기*/
+  background: white;
+  padding: 0 20px 10px;
+  transform: translate(-20px, 20px);
+  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 12%)
+}
+
+.dropmenu ul ul li {
+  display: block;
+}
+
+.dropmenu ul li {
+  display: inline-block;
+}
+
+.dropmenu ul li a {
+  display: block;
+  width: 130px;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 43px;
+  text-decoration: none;
+}
+
+.dropmenu ul li a:hover {
+  color: #000;
+}
+
+
+/*헤더 부분*/
+.wrap {
+  background-color: white;
+}
+
+header {
+  width: 1400px;
+  margin: 0 auto;
+  padding: 25px 0;
+  font-size: 30px;
+  color: #555;
+  position: relative;
+}
+     .ld-container{ width: 1200px; border: 1px solid black;}  
+
+
+ </style>
+</head>
+<body>
+ <div class="wrap">
+  <header>
+    <a href="#">
+      <p><img src="../../img/travel.png" alt="" style="width: 50px; height: 50px;"></p>
+    </a>
+    
+    <!-- <img src="https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-128.png" alt=""> -->
+    <nav>
+      <div class="dropmenu">
+        <ul id="dm_ul">
+          
+          <li><a href="#">국내숙소</a>
+            <ul>
+              <li><a href="#">모텔</a></li>
+              <li><a href="#">호텔</a></li>
+              <li><a href="#">게스트하우스</a></li>
+            </ul>
+          </li>
+          <li><a href="#">레저/전시</a>
+            <ul>
+              <li><a href="#">레저</a></li>
+              <li><a href="#">전시</a></li>
+            </ul>
+          </li>
+          <li><a href="#">교통</a>
+            <ul>
+              <li><a href="#">예약하기</a></li>
+              <li><a href="#">예약확인</a></li>
+            </ul>
+          </li>
+          <li><a href="#">더보기</a>
+            <ul>
+              <li><a href="#">비회원 에약</a></li>
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">qna</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="nav-login">로그인</a>
+          </li>
+          <li>
+            <div class="nav-search">
+            <form action="" class="nav-search-container">
+              <input type="text" class="nav-search-input" placeholder="검색">
+              <button type="submit" class="search-btn"><img src="../../img/search.png" alt="버튼"></button>
+          </form>
+          </div >
+          </li>
+        </ul>
+    </nav>
+  </header>
+</div>
+
+
+  <div class="leisure-d-container">
+   .
+
+
+
+  </div>
+
+ 
+ <script>
+   $(".dropmenu ul li").hover(function() {
+     $(this)
+       .find("ul")
+       .stop()
+       .fadeToggle(300);
+   });
+
+ </script> 
+</body>
+</html>
