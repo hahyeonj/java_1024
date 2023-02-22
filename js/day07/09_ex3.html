@@ -19,14 +19,14 @@
     </div>
 
     <script>
-        $('.btn-prev').click(()=>{
+        $('.box-shop-in .btn-prev').click(function(e){
             let curPage = $('.page').text();//.data('page');
             let maxPage = $('.max-page').text();//.data('max');
             curPage = +curPage
             curPage = --curPage == 0? maxPage : curPage;
             $('.page').text(curPage);
         });
-        $('.btn-next').click(()=>{
+        $('.box-shop-in .btn-next').click(function(e){
             let curPage = $('.page').text();//.data('page');
             let maxPage = $('.max-page').text();//.data('max');
             curPage = +curPage

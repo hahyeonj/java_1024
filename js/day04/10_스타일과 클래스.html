@@ -5,11 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <style>
+        .test{
+            background-color: red; color: #fff;
+        }
+    </style>
 </head>
 <body>
+    <div class="box">상자1</div>
+    <div class="box box2">상자2</div>
+   
     <script>
 
-
+    let e1 = document.body.firstElementChild;
+    let e2 = e1.nextElementSibling;
+    e1.className = 'box box1';
+    e1.classList.add('test');
+    e1.classList.toggle('test');
+    e1.classList.toggle('test');
+    e1.classList.remove('test');
+    e1.classList.('test');
+    console.log(e.classList.contains('test'));
+    console.log(e1.className);
+    console.log(e2.className);
+    e2.style.color = 'red';
+    e2.style.backgroundColor = 'yellow';
+    console.log(e2.);
+    ;
     </script>
 </body>
 </html>

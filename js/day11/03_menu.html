@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery.validate.min.js"></script>
+	<script src="../js/additional-methods.min.js"></script>
+	<style>
+		.btn{
+			 width: 50px; position: absolute; background-color: #fff;
+			
+				top: 0; right: 0;
+				line-height: 50px; padding: 0;
+		}
+		.menu-box{
+			position: fixed; right: 0; top: 0; bottom: 0;	
+			width: 200px; 	box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.3); 
+			background: #fff;
+		}
+		.btn-close{
+			position: absolute; right: 0; top: 0;
+			width: 50px; height: 50px; font-size: 40px;
+			border: 0; background: #fff; outline: 0;
+			cursor: pointer;
+		}
+		nav{
+			 border: 1px solid black; position: relative;
+				height: 50px;
+		}
+		nav::after{
+			display: block; content: '';
+
+		}
+	</style>
+
+
+</head>
+<body>
+	<nav>
+	<button class="btn">i. </button>
+	</nav>
+	<div class="menu-box">
+			<button class="btn-close"><i class="fas fa-times"></i></button>
+	</div>
+	
+	<script>
+			$('.btn').click(function(){
+			$('.menu-box').animate({
+				right : 0
+
+			},500)
+		});
+		$('.btn').click(function(){
+			$('.menu-box').animate({
+				right : '-202px'
+
+			},500)
+		});
+
+
+	</script>
+</body>
+</html>

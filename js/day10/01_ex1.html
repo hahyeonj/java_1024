@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+
+    <script src="../js/jquery.min.js"></script>
+</head>
+
+<style>
+    .form{
+        width: 500px; margin: 0 auto ;
+    }
+    .title{
+        text-align: center;
+    }
+    [name = id], [name = pw],[]{
+        display : blcok; width: 100%
+        padding : 0 10px;  box sizing : 
+    }
+    .btn-submit{
+        width: 100%; margin-top: 20px; height: 40px;
+        border-radius: 10px; border : 1px solid black;
+
+    }
+</style>
+
+<body>
+    
+    
+    
+    <form action="" id="form" method="get"><!--method 원래 host이나 -->
+        <h1>회원가입</h1>
+		<input type="text" name="id"><br>
+        <input type="text" name="pw"><br>
+        <input type="text" name="pw2"><br>
+		
+        <div>    
+            <label>
+                <input type="radio" name="gender" value="남성" >남성
+            </label>
+            <label>
+                <input type="radio" name="gender" value="여성">여성
+            </label>
+        </div><br>
+        <button type="submit" class="btn submit">회원가입</button>
+    </form>
+    <script>
+
+        
+
+
+
+
+        
+
+
+            let id =$('[name=id]').val();
+			if(id.length == 0){
+				alert('아이디는 필수항목입니다.');
+                $('[name=id]').focus();
+				return false;
+            }
+            $('#form').submit(function(){
+            let idRex ='';
+
+
+            if(!idRegix.test(id)){
+                alert('아이디는 5~13자, 영문, 숫자만 가능합니다.');
+                $('[name=id]').focus();
+                return false;
+            }
+
+
+            let pw =$('[name=pw]').val();
+			if(pw.length == 0){
+				alert('비번은 필수항목입니다.');
+                $('[name=pw]').focus();
+				return false;
+                let pw =$('[name=pw]').val();
+            }
+            $('#form').submit(function(){
+            let pwRex ='';
+            if(!Regix.test(pw)){
+                alert('아이디는 5~13자, 영문, 숫자만 가능합니다.');
+                $('[name=id]').focus();
+                return false;
+            }
+
+			if(pw != pw2){
+				alert('비번과 비번확인이 일치하지 않습니다.');
+                $('[name=pw]').focus();
+				return false;
+            if ($('[name=gender].checked')){
+				alert('성별을 .');
+                $('[name=gender]').focus();
+				return false;
+            }
+        }      
+        
+		});
+        checkboxList.each(function(){
+
+    </script>
+</body>
+</html>
